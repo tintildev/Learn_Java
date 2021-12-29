@@ -23,7 +23,13 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 
 ### Projects
 
+- ToDoList - Java, Swing
+
 ### Screenshot
+
+ToDoList:
+![](./images/todolist.png)
+
 
 ### Resources
 I'm just trying to use my own pictures and icons.
