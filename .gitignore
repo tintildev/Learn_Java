@@ -1,0 +1,33 @@
+/.metadata/
+
+.sonarlint/default/.sonartmp_1662360689583400095/sonarlint-slf4j-sonar-log5164703243405142973.jar
+.sonarlint/default/.sonartmp_10482461148362269759/sonarlint-slf4j-sonar-log11088404554193004793.jar
+.sonarlint/default/.sonartmp_9565813260521109119/sonarlint-slf4j-sonar-log10468719365757869772.jar
+ToDoList_Web/~$kumenation.docx
+
+.sonarlint
+
+# "useless" OS X files
+.DS_Store
+
+# maven
+target/
+
+# intellij idea
+*.iml
+*.ipr
+*.iws
+.idea/
+!.idea/copyright/
+!.idea/scopes/
+!.idea/.name
+!.idea/ant.xml
+!.idea/codeStyleSettings.xml
+!.idea/misc.xml
+!.idea/vcs.xml
+
+
+Servers/.project
+
+
+WorkInProgress/
