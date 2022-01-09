@@ -31,7 +31,7 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 ToDoList:
 ![](./images/todolist.png)
 
-Reaction Time Tester
+Reaction Time Tester:
 ![](./images/reaction-time-tester.png)
 
 
