@@ -27,7 +27,6 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 - Reaction Time Tester - Java, Swing
 
 ### Screenshot
-
 ToDoList:
 ![](./images/todolist.png)
 
