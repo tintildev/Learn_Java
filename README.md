@@ -27,11 +27,11 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 - Reaction Time Tester - Java, Swing
 
 ### Screenshot
-ToDoList:
-![](./images/todolist.png)
+ToDoList:  
+![](./images/todolist.png)  
 
-Reaction Time Tester:
-![](./images/reaction-time-tester.png)
+Reaction Time Tester:  
+![](./images/reaction-time-tester.png)  
 
 
 ### Resources
