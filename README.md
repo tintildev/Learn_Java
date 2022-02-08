@@ -25,6 +25,7 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 
 - ToDoList - Java, Swing
 - Reaction Time Tester - Java, Swing
+- WordCounter - Java, Swing
 
 ### Screenshot
 ToDoList:  
@@ -32,6 +33,10 @@ ToDoList:
 
 Reaction Time Tester:  
 ![](./images/reaction-time-tester.png)  
+
+
+WordCounter:  
+![](./images/wordcounter.png)  
 
 
 ### Resources
