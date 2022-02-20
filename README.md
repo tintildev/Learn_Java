@@ -26,6 +26,7 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 - ToDoList - Java, Swing
 - Reaction Time Tester - Java, Swing
 - WordCounter - Java, Swing
+- Tic Tac Toe - Java, Swing
 
 ### Screenshot
 ToDoList:  
@@ -38,6 +39,10 @@ Reaction Time Tester:
 WordCounter:  
 ![](./images/wordcounter.png)  
 
+
+
+TicTacToe:  
+![](./images/tictactoe.png)  
 
 ### Resources
 I'm just trying to use my own pictures and icons.
