@@ -2,7 +2,6 @@ package at.martinklestil.controller;
 
 import at.martinklestil.view.ReactionLabel;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;

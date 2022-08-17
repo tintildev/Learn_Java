@@ -1,7 +1,6 @@
 package at.martinklestil.model;
 
 import javax.swing.*;
-import java.util.concurrent.TimeUnit;
 
 public class Scoure {
 

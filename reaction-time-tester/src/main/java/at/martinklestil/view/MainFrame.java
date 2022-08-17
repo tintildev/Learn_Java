@@ -1,5 +1,4 @@
 package at.martinklestil.view;
-
 import at.martinklestil.model.Global;
 
 import javax.swing.*;
@@ -7,8 +6,8 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-    private final JPanel northPanel = new JPanel();
     private final Global myGlobal = new Global();
+    private final JPanel northPanel = new JPanel();
     private final JPanel footerPanel = new FooterPanel(myGlobal);
     private final JPanel mainPanel = new MainPanel(myGlobal);
 
