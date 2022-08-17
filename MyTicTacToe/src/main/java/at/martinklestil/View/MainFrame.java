@@ -5,11 +5,11 @@ import at.martinklestil.Model.Global;
 import javax.swing.*;
 import java.awt.*;
 
-public class Gamefield extends JFrame {
+public class MainFrame extends JFrame {
 
     private JPanel gamePanel = new JPanel();
 
-    public Gamefield(int with, int height){
+    public MainFrame(int with, int height){
         Global global = new Global();
         JLabel titelLabel = new JLabel("Welcome by my tic tac toe game.");
         titelLabel.setFont(global.myFontDefault);
@@ -20,7 +20,7 @@ public class Gamefield extends JFrame {
         at.martinklestil.Model.Gamefield cheesBoard = new at.martinklestil.Model.Gamefield();
         cheesBoard.newCheesBoard();
         JButton[][] gameArray = new at.martinklestil.Model.Gamefield().getGameArray();
-        addCheesboard(gameArray);
+        addChessboard(gameArray);
 
         //Controller
         ControllPanel gameController = new ControllPanel(this);
@@ -36,7 +36,7 @@ public class Gamefield extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public void addCheesboard(JButton[][] values){
+    public void addChessboard(JButton[][] values){
         gamePanel.removeAll();
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){

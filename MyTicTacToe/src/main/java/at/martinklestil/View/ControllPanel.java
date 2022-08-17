@@ -11,9 +11,9 @@ public class ControllPanel extends JPanel{
 
     private JLabel result = new JLabel("");
     private JButton restart = new JButton("restart");
-    private Gamefield mainFrame;
+    private MainFrame mainFrame;
 
-    public ControllPanel(Gamefield mainFrame){
+    public ControllPanel(MainFrame mainFrame){
         Global global = new Global();
         this.mainFrame = mainFrame;
 
@@ -30,8 +30,4 @@ public class ControllPanel extends JPanel{
         this.add(player2);
         this.add(result);
         this.add(restart);
-    }
-
-
-
-}
+    }}

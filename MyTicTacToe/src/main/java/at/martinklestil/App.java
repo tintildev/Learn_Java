@@ -1,10 +1,10 @@
 package at.martinklestil;
 
-import at.martinklestil.View.Gamefield;
+import at.martinklestil.View.MainFrame;
 
 public class App {
 
     public static void main(String[] args) {
-        new Gamefield(600, 600);
+        new MainFrame(600, 600);
     }
 }
