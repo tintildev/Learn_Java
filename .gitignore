@@ -31,3 +31,8 @@ Servers/.project
 
 
 WorkInProgress/
+
+
+*.class
+
+
