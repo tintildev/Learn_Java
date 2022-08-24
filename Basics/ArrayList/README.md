@@ -2,14 +2,14 @@
 This is a first project to get an overview of ArrayList.
 We add values to the ArrayList, delete values and let's display them.
 
-# Goals
+## Goals
 - Learn Java 
 - First work with ArrayList
 
-# Resources
+## Resources
 - java.util.ArrayList
 
-# Created
+## Created
 2016 as part of the Wifi Vienna Java Developer course.
 
 
