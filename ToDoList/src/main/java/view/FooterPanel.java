@@ -1,8 +1,9 @@
 package view;
 
 import javax.swing.*;
-
 import model.Global;
+
+
 
 import java.awt.*;
 

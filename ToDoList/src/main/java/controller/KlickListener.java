@@ -1,22 +1,14 @@
 package controller;
 
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import org.checkerframework.checker.units.qual.Length;
-
 import data.ToDo;
 import data.ToDoDao;
 import data.ToDoImpl;
 import model.Global;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class KlickListener implements ActionListener {
