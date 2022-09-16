@@ -11,10 +11,10 @@ We add values to the ArrayList, delete values and let's display them.
 
 ## What is happening
 Format time:  
-![](.time.png)
+![](./time.png)
 
 Output:  
-![](.output.png)
+![](./output.png)
 
 ## Created
 2016 as part of the Wifi Vienna Java Developer course.
