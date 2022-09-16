@@ -1,6 +1,6 @@
 # Time
 This is a first project to get an overview of Time in Java.
-We add values to the ArrayList, delete values and let's display them.
+
 
 ## Goals
 - Learn Java
