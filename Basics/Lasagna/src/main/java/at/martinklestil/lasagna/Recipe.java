@@ -1,23 +1,41 @@
 package at.martinklestil.lasagna;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Recipe {
 
     private HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
+    private ArrayList<String> list = new ArrayList<String>();
 
     public Recipe(){
-        ingredients.put("pumpkin g", 250);
-        ingredients.put("onion", 1);
-        ingredients.put("vegetable soup ml", 80);
-        ingredients.put("olive oil shot", 1);
-        ingredients.put("salt", 1);
-        ingredients.put("pepper", 1);
-        ingredients.put("nutmeg", 1);
-        ingredients.put("herbs", 1);
-        ingredients.put("lasagna sheets", 12);
-        ingredients.put("pumpkin seeds g", 100);
+        list.add("pumpkin");
+        list.add("onion");
+        list.add("vegetable soup");
+        list.add("olive oil");
+        list.add("salt");
+        list.add("pepper");
+        list.add("nutmeg");
+        list.add("herbs");
+        list.add("lasagna sheets");
+        list.add("pumpkin seeds");
 
+        ingredients.put(list.get(0), 250);
+        ingredients.put(list.get(1), 1);
+        ingredients.put(list.get(2), 80);
+        ingredients.put(list.get(3), 1);
+        ingredients.put(list.get(4), 1);
+        ingredients.put(list.get(5), 1);
+        ingredients.put(list.get(6), 1);
+        ingredients.put(list.get(7), 1);
+        ingredients.put(list.get(8), 12);
+        ingredients.put(list.get(9), 100);
+
+
+    }
+
+    public ArrayList<String> getListofIngredients(){
+        return list;
     }
 
     public HashMap getIngredientsList(){
