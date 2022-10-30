@@ -15,19 +15,21 @@ A repository that I use to learn Java.
 I revised this repository at the end of 2021 and will now expand it regularly.
 
 - Java
-- Swing, AWT
+- Swing, AWT, JavaFX
 - JUnit
-- Maven
-- Gradle
-- Spring
+- Maven, Gradle
+- Spring, Spark
 
 ### Projects
 
+- Basics - small console projects
+- Learn_GUI - work with GUI
 - ToDoList - Java, Swing
 - Reaction Time Tester - Java, Swing
 - WordCounter - Java, Swing
 - Tic Tac Toe - Java, Swing
 - Spring Hello World - the Spring Quickstart Guide
+- Spark - first spark framework project
 
 ### Screenshot
 ToDoList:  
@@ -49,6 +51,11 @@ Spring Hello World:
 ![](./images/springHelloWorld.png)  
 
 ### Resources
+
+- Java 1.8 or higher
+- Gradle (with Java 1.8, because gradle doesn't support java 18 yet 2022-09)
+
+
 I'm just trying to use my own pictures and icons.
 
 - Images: my personal pictures
