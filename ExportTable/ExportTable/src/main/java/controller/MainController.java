@@ -57,6 +57,9 @@ public class MainController {
                         excelDataLoader.loadXlsData(selectedFile);
                         //checkLoadData = true;
                         datenPanel.setFirstRowData(excelDataLoader.getFirstRowData());
+                        mainFrame.revalidate();
+                        mainFrame.repaint();
+
                     } else if (extension.equalsIgnoreCase("csv")) {
                         //loadCSVData(selectedFile);
                     } else {

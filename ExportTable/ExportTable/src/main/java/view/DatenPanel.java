@@ -11,7 +11,9 @@ public class DatenPanel extends JPanel {
 	private JPanel viewDataPanel = new JPanel();
 	private JPanel rowDataPanel = new JPanel();
 
+
 	private ArrayList<String> infos = new ArrayList<>();
+
 
 	public DatenPanel() {
 		viewDataPanel.setLayout(new BoxLayout(viewDataPanel, BoxLayout.Y_AXIS));
@@ -21,7 +23,6 @@ public class DatenPanel extends JPanel {
 		JLabel info = new JLabel("Daten:");
 		this.add(info,BorderLayout.NORTH);
 
-		infos = new ArrayList<>();
 		infos.add("DatabaseId");
 		infos.add("uudi");
 		infos.add("Title");
@@ -54,14 +55,15 @@ public class DatenPanel extends JPanel {
 
 		JScrollPane scrollPane = new JScrollPane(table);
 		viewDataPanel.add(scrollPane);
-		rowDataPanel.setLayout(new FlowLayout());
 
 
 		*/
+		rowDataPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
+
 		JPanel infosPanel = new JPanel();
 		infosPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0 , 0));
-		for (String names: infos){
-			infosPanel.add(new PersonLabel(names));
+		for (int i = 0; i < infos.size(); i++ ){
+			infosPanel.add(new PersonLabel(infos.get(i)));
 		}
 
 		viewDataPanel.add(infosPanel);
@@ -73,11 +75,21 @@ public class DatenPanel extends JPanel {
 	public void setFirstRowData(ArrayList<String> firstRowData) {
 		viewDataPanel.add(new JLabel("Eingelesene Daten:"));
 		System.out.println("Daten erste Zeile:" + firstRowData);
-		for(String data: firstRowData){
-			rowDataPanel.add(new JLabel(data));
+
+		JPanel comboPanel = new JPanel();
+		JComboBox temp = new JComboBox<String>(infos.toArray(new String[infos.size()]));
+
+
+
+		for (int i = 0; i <firstRowData.size(); i++ ){
+			rowDataPanel.add(new JLabel(firstRowData.get(i)));
+			comboPanel.add(temp);
+
 		}
+		comboPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
 		viewDataPanel.add(rowDataPanel);
+		viewDataPanel.add(comboPanel);
+		viewDataPanel.revalidate();
 		viewDataPanel.repaint();
-		repaint();
 	}
 }

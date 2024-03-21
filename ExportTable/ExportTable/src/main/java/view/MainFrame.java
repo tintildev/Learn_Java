@@ -61,7 +61,7 @@ public class MainFrame extends JFrame  {
         this.setLayout(new BorderLayout());
         this.add(sidebar, BorderLayout.WEST);
         formularPanel.setPreferredSize(new Dimension(200, 800));
-        datenPanel.setPreferredSize(new Dimension(800, 800));
+        //datenPanel.setPreferredSize(new Dimension(600, 800));
 
 
         mainPanel.add(formularPanel);
