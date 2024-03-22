@@ -66,6 +66,7 @@ public class MainFrame extends JFrame  {
 
         mainPanel.add(formularPanel);
         mainPanel.add(datenPanel);
+        datenPanel.setPreferredSize(new Dimension(800, 800));
         this.add(mainPanel, BorderLayout.CENTER);
         this.add(footerPanel, BorderLayout.SOUTH);
         this.setTitle(titel);

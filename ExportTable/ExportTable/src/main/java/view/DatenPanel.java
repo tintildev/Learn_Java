@@ -4,11 +4,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
 public class DatenPanel extends JPanel {
 
-	private JPanel viewDataPanel = new JPanel();
+	private JPanel infosPanel = new JPanel();
 	private JPanel rowDataPanel = new JPanel();
 
 
@@ -16,13 +15,14 @@ public class DatenPanel extends JPanel {
 
 
 	public DatenPanel() {
-		viewDataPanel.setLayout(new BoxLayout(viewDataPanel, BoxLayout.Y_AXIS));
+		infosPanel.setLayout(new BoxLayout(infosPanel, BoxLayout.Y_AXIS));
 
-		this.setLayout(new BorderLayout());
+		this.setLayout(new GridLayout(3,1));
 
 		JLabel info = new JLabel("Daten:");
-		this.add(info,BorderLayout.NORTH);
+		this.add(info);
 
+		infos.add("Auswahl:");
 		infos.add("DatabaseId");
 		infos.add("uudi");
 		infos.add("Title");
@@ -40,56 +40,40 @@ public class DatenPanel extends JPanel {
 		infos.add("Info2");
 		infos.add("Info3");
 
-		/*
-		// Erstellen des TableModels
-		DefaultTableModel model = new DefaultTableModel();
-		for (String names : infos) {
-			model.addColumn(names);
-		}
-		//model.addRow(rowData.toArray());
-
-		// Erstellen der Tabelle
-		JTable table = new JTable(model);
-		table.setEnabled(false); // Die Tabelle ist nicht bearbeitbar
-		table.setFillsViewportHeight(true); // Die Tabelle füllt die gesamte Höhe des Bereichs aus
-
-		JScrollPane scrollPane = new JScrollPane(table);
-		viewDataPanel.add(scrollPane);
-
-
-		*/
-		rowDataPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
-
+		//Set Infos
 		JPanel infosPanel = new JPanel();
 		infosPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0 , 0));
-		for (int i = 0; i < infos.size(); i++ ){
+		for (int i = 1; i < infos.size(); i++ ){
 			infosPanel.add(new PersonLabel(infos.get(i)));
 		}
 
-		viewDataPanel.add(infosPanel);
-		this.add(viewDataPanel, BorderLayout.CENTER);
+		this.infosPanel.add(infosPanel);
+		this.add(this.infosPanel);
+		this.add(new JLabel("Eingelesene Daten:"));
 
 	}
 
 
 	public void setFirstRowData(ArrayList<String> firstRowData) {
-		viewDataPanel.add(new JLabel("Eingelesene Daten:"));
 		System.out.println("Daten erste Zeile:" + firstRowData);
-
 		JPanel comboPanel = new JPanel();
-		JComboBox temp = new JComboBox<String>(infos.toArray(new String[infos.size()]));
-
-
+		JPanel dataHoldPanel = new JPanel();
+		dataHoldPanel.setLayout(new GridLayout(1,0));
 
 		for (int i = 0; i <firstRowData.size(); i++ ){
+			//Daten
 			rowDataPanel.add(new JLabel(firstRowData.get(i)));
+			//Combobox
+			JComboBox temp = new JComboBox<String>(infos.toArray(new String[infos.size()]));
 			comboPanel.add(temp);
 
 		}
-		comboPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
-		viewDataPanel.add(rowDataPanel);
-		viewDataPanel.add(comboPanel);
-		viewDataPanel.revalidate();
-		viewDataPanel.repaint();
+		rowDataPanel.setLayout(new GridLayout(firstRowData.size(), 0));
+		comboPanel.setLayout(new GridLayout(firstRowData.size(), 0));
+		dataHoldPanel.add(rowDataPanel);
+		dataHoldPanel.add(comboPanel);
+		this.add(dataHoldPanel);
+		this.revalidate();
+		this.repaint();
 	}
 }
