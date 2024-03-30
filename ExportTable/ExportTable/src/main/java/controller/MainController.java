@@ -1,6 +1,7 @@
 package controller;
 
 import model.ExcelDataLoader;
+import model.Person;
 import view.DatenPanel;
 import view.FormularPanel;
 import view.MainFrame;
@@ -12,6 +13,8 @@ import java.io.File;
 
 public class MainController {
     private MainFrame mainFrame;
+    private Person person = new Person();
+    private LoadDataController loadDataController;
     private FormularPanel formularPanel;
     private DatenPanel datenPanel;
     private ExcelDataLoader excelDataLoader = new ExcelDataLoader();
@@ -20,22 +23,15 @@ public class MainController {
         this.mainFrame = mainFrame;
         formularPanel = this.mainFrame.getFormularPanel();
         datenPanel = this.mainFrame.getDatenPanel();
-
-        //Set ActionListener
-        setActioListener();
-
-        if(checkLoadData){
-            //Set Data in View
-
-        }
-
-
-        //formularPanel.setBoxFirstRowData(excelDataLoader.getFirstRowData());
-
+        datenPanel.setInfos(person.getPersonCharacteristics());
+        //open Diaolog
+        setOpenButtonActioListener();
+        //load Excel Data Controller
+        loadDataController = new LoadDataController(mainFrame, person, excelDataLoader);
 
     }
 
-    public void setActioListener(){
+    public void setOpenButtonActioListener(){
         formularPanel.addOpenFileListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,9 +50,11 @@ public class MainController {
 
                     // Überprüfen der Dateierweiterung und Laden der Daten entsprechend
                     if (extension.equalsIgnoreCase("xls") || extension.equalsIgnoreCase("xlsx")) {
-                        excelDataLoader.loadXlsData(selectedFile);
-                        //checkLoadData = true;
+                        excelDataLoader.setFile(selectedFile);
+                        //load Data
+                        excelDataLoader.loadFirstXlsData();
                         datenPanel.setFirstRowData(excelDataLoader.getFirstRowData());
+
                         mainFrame.revalidate();
                         mainFrame.repaint();
 

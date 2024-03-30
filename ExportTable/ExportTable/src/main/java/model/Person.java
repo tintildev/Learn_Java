@@ -20,8 +20,11 @@ public class Person {
     private String adresse;
     private String ort;
     private String plz;
+    private String adressekomplett;
     private String telefon;
+    private String telMobile;
     private String email;
+    private String emailFirma;
     private String land;
     private String info1;
     private String info2;
@@ -29,26 +32,17 @@ public class Person {
     private String info4;
     private String info5;
 
-    public Person(String vorname, String nachname) {
+    public Person() {
         this.databaseId = nextId++; // Weist die nächste verfügbare ID zu und erhöht den Zähler
         this.uuid = UUID.randomUUID(); // Generieren einer UUID
-        this.vorname = vorname;
-        this.nachname = nachname;
     }
 
-    public Person(String title, String funktion, String firma, String vorname, String nachname, String geburtstag, String adresse, String ort, String plz, String telefon, String email, String land) {
-        this.title = title;
-        this.funktion = funktion;
-        this.firma = firma;
-        this.vorname = vorname;
-        this.nachname = nachname;
-        this.geburtstag = geburtstag;
-        this.adresse = adresse;
-        this.ort = ort;
-        this.plz = plz;
-        this.telefon = telefon;
-        this.email = email;
-        this.land = land;
+    public int getDatabaseId() {
+        return databaseId;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 
     public String getTitle() {
@@ -179,27 +173,135 @@ public class Person {
         this.info5 = info5;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "databaseId=" + databaseId +
-                ", uuid=" + uuid +
-                ", title='" + title + '\'' +
-                ", funktion='" + funktion + '\'' +
-                ", firma='" + firma + '\'' +
-                ", vorname='" + vorname + '\'' +
-                ", nachname='" + nachname + '\'' +
-                ", geburtstag='" + geburtstag + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", ort='" + ort + '\'' +
-                ", telefon='" + telefon + '\'' +
-                ", email='" + email + '\'' +
-                ", land='" + land + '\'' +
-                ", info1='" + info1 + '\'' +
-                ", info2='" + info2 + '\'' +
-                ", info3='" + info3 + '\'' +
-                ", info4='" + info4 + '\'' +
-                ", info5='" + info5 + '\'' +
-                '}';
+    public String getPlz() {
+        return plz;
+    }
+
+    public void setPlz(String plz) {
+        this.plz = plz;
+    }
+
+    public String getAdressekomplett() {
+        return adressekomplett;
+    }
+
+    public void setAdressekomplett(String adressekomplett) {
+        this.adressekomplett = adressekomplett;
+    }
+
+    public String getTelMobile() {
+        return telMobile;
+    }
+
+    public void setTelMobile(String telMobile) {
+        this.telMobile = telMobile;
+    }
+
+    public String getEmailFirma() {
+        return emailFirma;
+    }
+
+    public void setEmailFirma(String emailFirma) {
+        this.emailFirma = emailFirma;
+    }
+
+    public ArrayList<String> getPersonCharacteristics (){
+        ArrayList<String> personCharacteristics = new ArrayList<>();
+        personCharacteristics.add("databaseId");
+        personCharacteristics.add("uuid");
+        personCharacteristics.add("title");
+        personCharacteristics.add("funktion");
+        personCharacteristics.add("firma");
+        personCharacteristics.add("vorname");
+        personCharacteristics.add("nachname");
+        personCharacteristics.add("geburtstag");
+        personCharacteristics.add("adresse");
+        personCharacteristics.add("adressekomplett");
+        personCharacteristics.add("ort");
+        personCharacteristics.add("plz");
+        personCharacteristics.add("telefon");
+        personCharacteristics.add("telMobile");
+        personCharacteristics.add("email");
+        personCharacteristics.add("emailFirma");
+        personCharacteristics.add("land");
+        personCharacteristics.add("info1");
+        personCharacteristics.add("info2");
+        personCharacteristics.add("info3");
+        personCharacteristics.add("info4");
+        personCharacteristics.add("info5");
+
+
+        return personCharacteristics;
+    }
+
+    public void setData(String identifyer, String data) {
+        switch (identifyer){
+            case "databaseId":
+                break;
+            case "uuid":
+                break;
+            case "title":
+                setTitle(data);
+                break;
+            case "funktion":
+                setFunktion(data);
+                break;
+            case "firma":
+                setFirma(data);
+                break;
+            case "vorname":
+                setVorname(data);
+                break;
+            case "nachname":
+                setNachname(data);
+                break;
+            case "geburtstag":
+                setGeburtstag(data);
+                break;
+            case "adresse":
+                setAdresse(data);
+                break;
+            case "adressekomplett":
+                setAdressekomplett(data);
+                break;
+            case "ort":
+                setOrt(data);
+                break;
+            case "plz":
+                setPlz(data);
+                break;
+            case "telefon":
+                setTelefon(data);
+                break;
+            case "telefonMobile":
+                setTelMobile(data);
+                break;
+            case "eamil":
+                setEmail(data);
+                break;
+            case "emailFirma":
+                setEmailFirma(data);
+                break;
+            case "land":
+                setLand(data);
+                break;
+            case "info1":
+                setInfo1(data);
+                break;
+            case "info2":
+                setInfo2(data);
+                break;
+            case "info3":
+                setInfo3(data);
+                break;
+            case "info4":
+                setInfo4(data);
+                break;
+            case "info5":
+                setInfo5(data);
+                break;
+        }
+
+
     }
 }
