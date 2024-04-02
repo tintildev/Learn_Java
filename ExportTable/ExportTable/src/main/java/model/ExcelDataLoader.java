@@ -67,10 +67,16 @@ public class ExcelDataLoader {
             for (int i = 1; i < sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 Person tempPerson = new Person();
-                for(int d = 0; 0 <row.getLastCellNum(); d++){
+                for(int d = 0; 0 <= chosenData.size(); d++){
                     Cell cell = row.getCell(d);
-                    if(tempPerson.getPersonCharacteristics().get(d).equals(chosenData.get(d))){
-                        tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), cell.toString());
+                    System.out.println("last Cell Number:" + row.getLastCellNum());
+                    System.out.println("index: " + d);
+                    System.out.println("Characteristics: " + tempPerson.getPersonCharacteristics());
+                    System.out.println("Chosen Data:" + chosenData.get(d));
+                    for(int a = 0; a < tempPerson.getPersonCharacteristics().size(); a++){
+                        if(tempPerson.getPersonCharacteristics().get(a).equals(chosenData.get(d))){
+                            tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), cell.toString());
+                        }
                     }
                     allData.add(tempPerson);
                 }

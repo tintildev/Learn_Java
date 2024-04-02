@@ -1,5 +1,3 @@
-package main.java;
-
 import controller.MainController;
 import view.MainFrame;
 /**
