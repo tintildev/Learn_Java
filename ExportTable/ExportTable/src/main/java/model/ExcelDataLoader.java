@@ -75,11 +75,16 @@ public class ExcelDataLoader {
                     System.out.println("Chosen Data:" + chosenData.get(d));
                     for(int a = 0; a < tempPerson.getPersonCharacteristics().size(); a++){
                         if(tempPerson.getPersonCharacteristics().get(a).equals(chosenData.get(d))){
-                            tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), cell.toString());
+                            if(cell != null){
+                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), cell.toString());
+                            }else{
+                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), " ");
+                            }
+
                         }
                     }
-                    allData.add(tempPerson);
                 }
+                allData.add(tempPerson);
             }
         } catch (IOException ex) {
             ex.printStackTrace();

@@ -126,6 +126,7 @@ public class DatenPanel extends JPanel {
 		}
 
 		arrayDataPanel.add(scrollPane);
+		arrayDataPanel.add(new JLabel("Daten aus zweiter Excel: "));
 		this.add(arrayDataPanel);
 		this.revalidate();
 		this.repaint();
