@@ -67,7 +67,7 @@ public class ExcelDataLoader {
             for (int i = 1; i < sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 Person tempPerson = new Person();
-                for(int d = 0; 0 <= chosenData.size(); d++){
+                for(int d = 0; d < chosenData.size(); d++){
                     Cell cell = row.getCell(d);
                     System.out.println("last Cell Number:" + row.getLastCellNum());
                     System.out.println("index: " + d);
