@@ -54,7 +54,6 @@ public class MainController {
                         //load Data
                         excelDataLoader.loadFirstXlsData();
                         datenPanel.setFirstRowData(excelDataLoader.getFirstRowData());
-
                         mainFrame.revalidate();
                         mainFrame.repaint();
 

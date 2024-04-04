@@ -37,6 +37,7 @@ public class LoadDataController {
         }
 
         excelDataLoader.loadXlsDatas(chosenData);
+        view.getDatenPanel().setPersonArrayData(model, excelDataLoader.getAllData());
 
         System.out.println(excelDataLoader.getAllData());
     }

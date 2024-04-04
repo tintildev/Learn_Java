@@ -217,8 +217,8 @@ public class Person {
         personCharacteristics.add("geburtstag");
         personCharacteristics.add("adresse");
         personCharacteristics.add("adressekomplett");
-        personCharacteristics.add("ort");
         personCharacteristics.add("plz");
+        personCharacteristics.add("ort");
         personCharacteristics.add("telefon");
         personCharacteristics.add("telMobile");
         personCharacteristics.add("email");

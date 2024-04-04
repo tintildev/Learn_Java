@@ -6,6 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class DatenPanel extends JPanel {
 
@@ -24,7 +25,11 @@ public class DatenPanel extends JPanel {
 		infosPanel.setLayout(new BoxLayout(infosPanel, BoxLayout.Y_AXIS));
 		this.setLayout(new GridLayout(3,1));
 		JLabel info = new JLabel("Daten:");
+		info.setOpaque(false);
 		this.add(info);
+		this.setBackground(Color.white);
+		infosPanel.setOpaque(false);
+		rowDataPanel.setOpaque(false);
 	}
 
 
@@ -32,10 +37,10 @@ public class DatenPanel extends JPanel {
 		System.out.println("Daten erste Zeile:" + firstRowData);
 		JPanel comboPanel = new JPanel();
 		JPanel dataHoldPanel = new JPanel();
+		comboPanel.setOpaque(false);
+		dataHoldPanel.setOpaque(false);
 		dataHoldPanel.setLayout(new GridLayout(1,0));
-		JLabel tableDatenLabel = new JLabel("Daten aus Tabelle");
 		JLabel comboLabel = new JLabel("Bitte Auswahlen:");
-		dataHoldPanel.add(tableDatenLabel);
 		dataHoldPanel.add(comboLabel);
 
 		for (int i = 0; i <firstRowData.size(); i++ ){
@@ -68,14 +73,60 @@ public class DatenPanel extends JPanel {
 	public void setInfos(ArrayList<String> infos) {
 		this.infos = infos;
 		//Set Infos
-		JPanel infosPanel = new JPanel();
-		infosPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0 , 0));
+		JPanel theInfos = new JPanel();
+		theInfos.setLayout(new FlowLayout(FlowLayout.LEFT, 0 , 0));
 		for (int i = 1; i < infos.size(); i++ ){
-			infosPanel.add(new PersonLabel(infos.get(i)));
+			theInfos.add(new PersonLabel(infos.get(i)));
 		}
-		this.infosPanel.add(infosPanel);
-		this.add(this.infosPanel);
+		theInfos.setOpaque(false);
+		infosPanel.add(theInfos);
+		this.add(infosPanel);
 		this.add(new JLabel("Eingelesene Daten:"));
+		this.revalidate();
+		this.repaint();
+
+	}
+
+	public void setPersonArrayData(Person modelPerson, ArrayList<Person> allData){
+		this.removeAll();
+
+		JPanel arrayDataPanel = new JPanel(new GridLayout(0,1));
+		arrayDataPanel.setOpaque(false);
+		JLabel currentDataLabel = new JLabel("Aktuelle Daten: ");
+		arrayDataPanel.add(currentDataLabel);
+
+		// Erstelle die Tabelle
+		DefaultTableModel tableModel = new DefaultTableModel();
+		JTable table = new JTable(tableModel);
+		JScrollPane scrollPane = new JScrollPane(table);
+
+		// Lösche vorhandene Daten in der Tabelle
+		tableModel.setRowCount(0);
+
+		for (int i = 0; i < modelPerson.getPersonCharacteristics().size(); i++){
+			tableModel.addColumn(modelPerson.getPersonCharacteristics().get(i));
+		}
+
+		for (Person person : allData){
+			Object[] rowData = {person.getDatabaseId(), person.getUuid(), person.getTitle(),
+					person.getFunktion(), person.getFirma(),
+					person.getVorname(), person.getNachname(),
+					person.getGeburtstag(), person.getAdresse(),
+					person.getAdressekomplett(), person.getPlz(),
+					person.getOrt(), person.getTelefon(),
+					person.getTelMobile(), person.getEmail(),
+					person.getEmailFirma(), person.getLand(),
+					person.getInfo1(), person.getInfo2(),
+					person.getInfo3(), person.getInfo4(),
+					person.getInfo5()
+
+
+			};
+			tableModel.addRow(rowData);
+		}
+
+		arrayDataPanel.add(scrollPane);
+		this.add(arrayDataPanel);
 		this.revalidate();
 		this.repaint();
 

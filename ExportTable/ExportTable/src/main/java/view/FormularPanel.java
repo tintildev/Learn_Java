@@ -8,49 +8,32 @@ import java.util.ArrayList;
 
 public class FormularPanel extends JPanel {
 
+	private JComboBox<String> boxFirstRowData = new JComboBox<>();
 	private JComboBox<String> delimiterComboBox;
-	private JComboBox<String> boxFirstRowData;
+	private JPanel formPanel = new JPanel();
 	private JButton openFileButton;
 	public FormularPanel(){
 		//Formular Panel
+		formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
 		this.setLayout(new BorderLayout());
 		Color color = Color.decode("#a1dfb5");
 		this.setBackground(color);
 
-		//Erstelle formPanel;
-		JPanel formPanel = new JPanel(new GridLayout(4,0));
-		JPanel zeroFloor = new JPanel(new FlowLayout());
-		JLabel witchFile = new JLabel("Dateiart:");
-		JComboBox fileComboBox = new JComboBox(new String[]{"csv", "xls"});
-		zeroFloor.add(witchFile);
-		zeroFloor.add(fileComboBox);
-		JPanel firstFloor = new JPanel(new FlowLayout());
+		//Erstelle open Excel View;
 		JPanel secoundFloor = new JPanel(new FlowLayout());
-		JLabel infoTrenner = new JLabel("Trennzeichen:");
-		delimiterComboBox = new JComboBox<>(new String[]{"Spalten", ";", ","});
-		firstFloor.add(infoTrenner);
-		firstFloor.add(delimiterComboBox);
 		JLabel infoCSV = new JLabel("Bitte erste Excel Datei waehlen:");
 		openFileButton = new JButton("Oeffnen");
 		openFileButton.setPreferredSize(new Dimension(120, 60));
 		secoundFloor.add(infoCSV);
 		secoundFloor.add(openFileButton);
-
-		JPanel excelDataPanel = new JPanel(new FlowLayout());
-		JLabel excelDataLabel = new JLabel("Anhand welcher Spalte sollen die Datein verglichen werden:");
-		boxFirstRowData = new JComboBox<>();
-		excelDataPanel.add(excelDataLabel);
-		excelDataPanel.add(boxFirstRowData);
-
-		// Add Elements formPanel
-		formPanel.add(zeroFloor);
-		formPanel.add(firstFloor);
 		formPanel.add(secoundFloor);
-		formPanel.setOpaque(false);
-		zeroFloor.setOpaque(false);
-		firstFloor.setOpaque(false);
+
+
+		// set Opaque
 		secoundFloor.setOpaque(false);
 		infoCSV.setOpaque(false);
+		formPanel.setOpaque(false);
+
 
 
 		//hinzufügen zu MainPanel
@@ -73,5 +56,40 @@ public class FormularPanel extends JPanel {
 	//Get Auswahl Trennzeichen
 	public String getDelimiterComboBox() {
 		return delimiterComboBox.getSelectedItem().toString();
+	}
+
+	public void openCsvView () {
+
+		//View falls csv geöffnet werdern soll:
+		JPanel zeroFloor = new JPanel(new FlowLayout());
+		JLabel witchFile = new JLabel("Dateiart:");
+		JComboBox fileComboBox = new JComboBox(new String[]{"csv", "xls"});
+		zeroFloor.add(witchFile);
+		zeroFloor.add(fileComboBox);
+		JPanel firstFloor = new JPanel(new FlowLayout());
+
+		JLabel infoTrenner = new JLabel("Trennzeichen:");
+		delimiterComboBox = new JComboBox<>(new String[]{"Spalten", ";", ","});
+		firstFloor.add(infoTrenner);
+		firstFloor.add(delimiterComboBox);
+
+		formPanel.add(zeroFloor);
+		formPanel.add(firstFloor);
+		formPanel.setOpaque(false);
+		zeroFloor.setOpaque(false);
+		firstFloor.setOpaque(false);
+	}
+
+	public void setCompareView(){
+		// compare View:
+		formPanel.removeAll();
+		JPanel excelDataPanel = new JPanel(new FlowLayout());
+		JLabel excelDataLabel = new JLabel("Anhand welcher Spalte sollen die Datein verglichen werden:");
+		excelDataPanel.add(excelDataLabel);
+		excelDataPanel.add(boxFirstRowData);
+		formPanel.add(excelDataPanel);
+		formPanel.revalidate();
+		formPanel.repaint();
+
 	}
 }
