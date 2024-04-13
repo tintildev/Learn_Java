@@ -11,10 +11,11 @@ import java.util.ArrayList;
 public class ExcelDataLoader {
 
     private ArrayList<String> firstRowData;
-    private ArrayList<Person> allData = new ArrayList<>();
+    private ArrayList<Person> allData;
     private File file;
 
     public ExcelDataLoader() {
+        allData = new ArrayList<>();
     }
 
     public void loadFirstXlsData() {
@@ -58,9 +59,6 @@ public class ExcelDataLoader {
         try (FileInputStream fis = new FileInputStream(file)) {
             Workbook workbook = WorkbookFactory.create(fis);
             Sheet sheet = workbook.getSheetAt(0); // Erste Tabelle in der Excel-Datei
-
-            // Neue ArrayList erstellen
-            allData = new ArrayList<>();
 
 
             //starte bei Zeile 1 bis zur letzten Zeile

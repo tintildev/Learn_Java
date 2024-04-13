@@ -12,14 +12,11 @@ public class DatenPanel extends JPanel {
 
 	private JPanel infosPanel = new JPanel();
 	private JPanel rowDataPanel;
-
 	private JPanel dataHoldPanel = new JPanel();
-
-
 	private ArrayList<String> infos;
-
-	private ArrayList<JComboBox> comboBoxesArray= new ArrayList<>();
-
+	private ArrayList<JComboBox> comboBoxesArray;
+	private DefaultTableModel tableModel = new DefaultTableModel();
+	private JScrollPane scrollPane;
 	private JButton sendData = new JButton("Daten laden");
 
 
@@ -36,6 +33,7 @@ public class DatenPanel extends JPanel {
 
 
 	public void setFirstRowData(ArrayList<String> firstRowData) {
+		comboBoxesArray = new ArrayList<>();
 		rowDataPanel = new JPanel();
 		rowDataPanel.setOpaque(false);
 		System.out.println("Daten erste Zeile:" + firstRowData);
@@ -91,23 +89,17 @@ public class DatenPanel extends JPanel {
 	}
 
 	public void setPersonArrayData(Person modelPerson, ArrayList<Person> allData){
-		this.remove(infosPanel);
+		this.removeAll();
 		infosPanel.removeAll();
-		this.remove(dataHoldPanel);
 		dataHoldPanel.removeAll();
-		this.remove(sendData);
 
 		JPanel arrayDataPanel = new JPanel(new GridLayout(0,1));
 		arrayDataPanel.setOpaque(false);
 		JLabel currentDataLabel = new JLabel("Aktuelle Daten: ");
 		arrayDataPanel.add(currentDataLabel);
 
-		// Erstelle die Tabelle
-		DefaultTableModel tableModel = new DefaultTableModel();
-		JTable table = new JTable(tableModel);
-		JScrollPane scrollPane = new JScrollPane(table);
-
 		// Lösche vorhandene Daten in der Tabelle
+		tableModel.setColumnCount(0);
 		tableModel.setRowCount(0);
 
 		for (int i = 0; i < modelPerson.getPersonCharacteristics().size(); i++){
@@ -131,9 +123,9 @@ public class DatenPanel extends JPanel {
 			};
 			tableModel.addRow(rowData);
 		}
-
+		JTable table = new JTable(tableModel);
+		scrollPane = new JScrollPane(table);
 		arrayDataPanel.add(scrollPane);
-		arrayDataPanel.add(new JLabel("Daten aus zweiter Excel: "));
 		this.add(arrayDataPanel);
 		this.revalidate();
 		this.repaint();
