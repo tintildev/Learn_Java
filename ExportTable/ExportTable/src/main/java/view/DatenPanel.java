@@ -13,6 +13,8 @@ public class DatenPanel extends JPanel {
 	private JPanel infosPanel = new JPanel();
 	private JPanel rowDataPanel = new JPanel();
 
+	private JPanel dataHoldPanel = new JPanel();
+
 
 	private ArrayList<String> infos;
 
@@ -26,7 +28,7 @@ public class DatenPanel extends JPanel {
 		this.setLayout(new GridLayout(3,1));
 		JLabel info = new JLabel("Daten:");
 		info.setOpaque(false);
-		this.add(info);
+		infosPanel.add(info);
 		this.setBackground(Color.white);
 		infosPanel.setOpaque(false);
 		rowDataPanel.setOpaque(false);
@@ -36,7 +38,6 @@ public class DatenPanel extends JPanel {
 	public void setFirstRowData(ArrayList<String> firstRowData) {
 		System.out.println("Daten erste Zeile:" + firstRowData);
 		JPanel comboPanel = new JPanel();
-		JPanel dataHoldPanel = new JPanel();
 		comboPanel.setOpaque(false);
 		dataHoldPanel.setOpaque(false);
 		dataHoldPanel.setLayout(new GridLayout(1,0));
@@ -80,15 +81,17 @@ public class DatenPanel extends JPanel {
 		}
 		theInfos.setOpaque(false);
 		infosPanel.add(theInfos);
+		infosPanel.add(new JLabel("Eingelesene Daten:"));
 		this.add(infosPanel);
-		this.add(new JLabel("Eingelesene Daten:"));
 		this.revalidate();
 		this.repaint();
 
 	}
 
 	public void setPersonArrayData(Person modelPerson, ArrayList<Person> allData){
-		this.removeAll();
+		this.remove(infosPanel);
+		this.remove(dataHoldPanel);
+		this.remove(sendData);
 
 		JPanel arrayDataPanel = new JPanel(new GridLayout(0,1));
 		arrayDataPanel.setOpaque(false);

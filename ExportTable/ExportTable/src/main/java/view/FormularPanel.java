@@ -11,6 +11,7 @@ public class FormularPanel extends JPanel {
 	private JComboBox<String> boxFirstRowData = new JComboBox<>();
 	private JComboBox<String> delimiterComboBox;
 	private JPanel formPanel = new JPanel();
+	JLabel infoCSV = new JLabel("Bitte erste Excel Datei waehlen:");
 	private JButton openFileButton;
 	public FormularPanel(){
 		//Formular Panel
@@ -21,7 +22,6 @@ public class FormularPanel extends JPanel {
 
 		//Erstelle open Excel View;
 		JPanel secoundFloor = new JPanel(new FlowLayout());
-		JLabel infoCSV = new JLabel("Bitte erste Excel Datei waehlen:");
 		openFileButton = new JButton("Oeffnen");
 		openFileButton.setPreferredSize(new Dimension(120, 60));
 		secoundFloor.add(infoCSV);
@@ -90,6 +90,13 @@ public class FormularPanel extends JPanel {
 		formPanel.add(excelDataPanel);
 		formPanel.revalidate();
 		formPanel.repaint();
+
+	}
+
+	public void setInfoCSVLabelToSecoundData () {
+		infoCSV.setText("Bitte zweite Datei wählen:");
+		openFileButton.setBackground(Color.RED);
+		//openFileButton.addActionListener();
 
 	}
 }
