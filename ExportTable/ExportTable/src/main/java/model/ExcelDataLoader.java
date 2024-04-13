@@ -76,9 +76,11 @@ public class ExcelDataLoader {
                     for(int a = 0; a < tempPerson.getPersonCharacteristics().size(); a++){
                         if(tempPerson.getPersonCharacteristics().get(a).equals(chosenData.get(d))){
                             if(cell != null){
-                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), cell.toString());
+                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(a), cell.toString());
+                                System.out.println(tempPerson.getPersonCharacteristics().get(a));
+                                System.out.println(cell.toString());
                             }else{
-                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(d), " ");
+                                tempPerson.setData(tempPerson.getPersonCharacteristics().get(a), " ");
                             }
 
                         }
