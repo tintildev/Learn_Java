@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class DatenPanel extends JPanel {
 
 	private JPanel infosPanel = new JPanel();
-	private JPanel rowDataPanel = new JPanel();
+	private JPanel rowDataPanel;
 
 	private JPanel dataHoldPanel = new JPanel();
 
@@ -31,11 +31,13 @@ public class DatenPanel extends JPanel {
 		infosPanel.add(info);
 		this.setBackground(Color.white);
 		infosPanel.setOpaque(false);
-		rowDataPanel.setOpaque(false);
+
 	}
 
 
 	public void setFirstRowData(ArrayList<String> firstRowData) {
+		rowDataPanel = new JPanel();
+		rowDataPanel.setOpaque(false);
 		System.out.println("Daten erste Zeile:" + firstRowData);
 		JPanel comboPanel = new JPanel();
 		comboPanel.setOpaque(false);
@@ -90,7 +92,9 @@ public class DatenPanel extends JPanel {
 
 	public void setPersonArrayData(Person modelPerson, ArrayList<Person> allData){
 		this.remove(infosPanel);
+		infosPanel.removeAll();
 		this.remove(dataHoldPanel);
+		dataHoldPanel.removeAll();
 		this.remove(sendData);
 
 		JPanel arrayDataPanel = new JPanel(new GridLayout(0,1));
