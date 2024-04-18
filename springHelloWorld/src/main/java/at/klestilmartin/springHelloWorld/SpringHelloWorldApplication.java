@@ -19,4 +19,9 @@ public class SpringHelloWorldApplication {
 		return String.format("Hello %s!", name);
 	}
 
+	@GetMapping("/helloWorld")
+	public String helloWorld(){
+		return "Hello World";
+	}
+
 }
