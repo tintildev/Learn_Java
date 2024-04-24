@@ -1,0 +1,92 @@
+/*CSS variables*/
+
+:root {
+    --maincolor: #276678;
+    --maincolor-light: #1687a7;
+
+    --secondcolor: #d3e0ea;
+    --secondcolor-light: #f6f5f5;
+
+    --color-white: white;
+    --color-black: black;
+  }
+
+
+/* Default Values */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*10px/16px = 62.5% -> 1rem = 10px */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    font-weight: 300;
+    line-height: 1.6;
+    
+}
+
+/* Start Styling */
+
+.container {
+    display: grid;
+    grid-template-rows: 5vh 40vh 5vh;
+    grid-template-columns: 10vw max-content 10vw;
+}
+
+.App{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border: var(--black) 1px solid;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    background-color: var(--maincolor);
+}
+
+.App h1{
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: var(--secondcolor-light);
+}
+
+#inputField {
+    border: 1px solid var(--black);
+    outline: none;
+    font-size: 2.5rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    background-color: var(--secondcolor-light);
+    color: var(--maincolor-light);
+}
+
+#addButton{
+    border: 1px solid var(--black);
+    font-size: 3rem;
+    height: 4rem;
+    vertical-align: middle;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    background-color: var(--secondcolor-light);
+    color: var(--secondcolor);
+}
+
+#addButton:hover{
+    background-color: var(--secondcolor);
+    color: var(--secondcolor-light);
+}
+
+.paragraph{
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--secondcolor-light);
+}
