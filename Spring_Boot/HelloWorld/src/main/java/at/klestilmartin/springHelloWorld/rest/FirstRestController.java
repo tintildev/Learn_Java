@@ -13,7 +13,7 @@ public class FirstRestController {
     //inject properties
     @Value("${hello.name}")
     private String hello;
-    
+
 
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
