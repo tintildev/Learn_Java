@@ -20,8 +20,9 @@ public class TodoService {
         return todoList;
     }
 
-    public void addTodo(Todo todo){
+    public Todo addTodo(Todo todo){
         todoList.add(todo);
+        return todo;
     }
 
     public void removeTodo(int index) {

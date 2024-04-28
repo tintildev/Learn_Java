@@ -2,26 +2,24 @@ package at.martinklestil.TodoList.model;
 
 public class Todo {
 
-    private int id;
+
     private String todo;
     private boolean completed = false;
+
+    private static int index = 0;
 
 
     public Todo() {
     }
 
-    public Todo(Integer id, String todo, Boolean completed) {
-        this.id = id;
+    public Todo(String todo, boolean completed) {
+        index =  getIndex() + 1;
         this.todo = todo;
         this.completed = completed;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public static int getIndex() {
+        return index;
     }
 
     public String getTodo() {
@@ -32,18 +30,17 @@ public class Todo {
         this.todo = todo;
     }
 
-    public Boolean getCompleted() {
+    public boolean isCompleted() {
         return completed;
     }
 
-    public void setCompleted(Boolean completed) {
+    public void setCompleted(boolean completed) {
         this.completed = completed;
     }
 
     @Override
     public String toString() {
         return "Todo{" +
-                "id=" + id +
                 ", todo='" + todo + '\'' +
                 ", completed=" + completed +
                 '}';

@@ -59,7 +59,7 @@ body{
     color: var(--secondcolor-light);
 }
 
-#inputField {
+#todoInput {
     border: 1px solid var(--black);
     outline: none;
     font-size: 2.5rem;
@@ -85,7 +85,7 @@ body{
     color: var(--secondcolor-light);
 }
 
-.paragraph{
+.todo{
     cursor: pointer;
     font-size: 20px;
     color: var(--secondcolor-light);

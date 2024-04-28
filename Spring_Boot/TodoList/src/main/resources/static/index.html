@@ -10,13 +10,15 @@
 <div class="container">
     <div class="App">
         <h1>To Do List</h1>
-        <input id="inputField" type="text"><button id="addButton">+</button></input>
+        <form id="todoForm">
+            <input id="todoInput" type="text" placeholder="Neues Todo eingeben..."><button type="submit" id="addButton">+</button></input>
+        </form>
         <!--Container for to dos-->
         <div class="toDos" id="toDoList">
         </div>
     </div>
 </div>
 <!--JS File-->
-<script src="main.js"></script>
+<script src="./js/todo.js"></script>
 </body>
 </html>

@@ -16,8 +16,8 @@ public class TodoListApplication {
 		TodoService todoService = context.getBean(TodoService.class);
 
 		// Erstellen von Testdaten
-		Todo todo1 = new Todo(1, "Einkaufen", false);
-		Todo todo2 = new Todo(2, "Wäsche waschen", false);
+		Todo todo1 = new Todo( "Einkaufen", false);
+		Todo todo2 = new Todo("Wäsche waschen", false);
 
 		// Hinzufügen von Testdaten zur Todo-Liste
 		todoService.addTodo(todo1);
