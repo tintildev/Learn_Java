@@ -29,6 +29,7 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 - WordCounter - Java, Swing
 - Tic Tac Toe - Java, Swing
 - Spring Hello World - the Spring Quickstart Guide
+- Spring TodoList - my first TodoList in Spring
 - Spark - first spark framework project
 
 ### Screenshot
@@ -49,6 +50,9 @@ TicTacToe:
 
 Spring Hello World:  
 ![](./images/springHelloWorld.png)  
+
+Spring ToDoList:
+![](./images/springToDoList.png)  
 
 ### Resources
 
