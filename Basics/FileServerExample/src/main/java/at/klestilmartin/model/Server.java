@@ -3,6 +3,7 @@ package at.klestilmartin.model;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Server implements Runnable{
 
@@ -30,6 +31,19 @@ public class Server implements Runnable{
             clientSocket = server.accept();
             System.out.println("Client accepted");
 
+            sendFile();
+
+            //close stream and socket
+            clientSocket.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void sendFile (){
+        try {
             //read data and send over socket
             FileInputStream fileInputStream = new FileInputStream(file);
             System.out.println("Server: Read file completed");
@@ -42,20 +56,14 @@ public class Server implements Runnable{
             int bytesRead;
 
             //returns the number of bytes actually read. The loop runs as long as there are still bytes in the file
-            while (((bytesRead = fileInputStream.read(buffer)) != -1)){
+            while (((bytesRead = fileInputStream.read(buffer)) != -1)) {
                 outputStream.write(buffer, 0, bytesRead);
             }
-            System.out.println("Server: File in OutputStream readet bytes: " + bytesRead);
-
-            //close stream and socket
-            outputStream.close();
-            fileInputStream.close();
-            clientSocket.close();
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
     }
+
 
 }
