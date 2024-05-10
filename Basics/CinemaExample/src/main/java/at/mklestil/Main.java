@@ -1,7 +1,13 @@
 package at.mklestil;
 
+import at.mklestil.controller.MyController;
+import at.mklestil.view.MyView;
+
 public class Main {
     public static void main(String[] args) {
+        /*
+            A small cinema example, create and test the project with junit tests.
+         */
         System.out.println("Hello world! This is the practice exercise:");
         System.out.println("A cinema has three cinema halls with the following pricing system:");
         System.out.println("cinema 1: parquet 3,8€ on all days of the week");

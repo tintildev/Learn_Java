@@ -1,5 +1,7 @@
 package at.mklestil.view;
 
+import java.util.Scanner;
+
 public class MyView {
 
     private int cinemaRoom = 0;
@@ -9,34 +11,60 @@ public class MyView {
     private Scanner scanner;
 
     public MyView() {
+        setCinemaRoom();
+        setPeople();
+        setSeat();
+        setDay();
+
+        scanner.close();
         
     }
 
-    public int setCinemaRoom (){
+    public void setCinemaRoom (){
         scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter cinema room 1 - 3: ");
-        cinema = myObj.nextLine();  // Read user input
-        scanner.close();
+        cinemaRoom = scanner.nextInt();  // Read user input
+
     }
 
-    public int setPeople (){
+    public void setPeople (){
         scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter number of people: ");
-        cinema = myObj.nextLine();  // Read user input
-        scanner.close();
+        people = scanner.nextInt();  // Read user input
+
     }
 
-    public int setSeat (){
+    public void setSeat (){
         scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter seat type 1 - 2: ");
-        cinema = myObj.nextLine();  // Read user input
-        scanner.close();
+        seat = scanner.nextInt();  // Read user input
+
     }
 
-    public int setDay (){
+    public void setDay (){
         scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter day 1 - 7: ");
-        cinema = myObj.nextLine();  // Read user input
-        scanner.close();
+        day = scanner.nextInt();  // Read user input
+
+    }
+
+    public int getCinemaRoom() {
+        return cinemaRoom;
+    }
+
+    public int getPeople() {
+        return people;
+    }
+
+    public int getSeat() {
+        return seat;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setPrice(double price) {
+        System.out.println("Total price: " + price);
     }
 }
