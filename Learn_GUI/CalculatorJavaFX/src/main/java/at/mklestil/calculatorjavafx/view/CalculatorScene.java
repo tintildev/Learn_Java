@@ -10,13 +10,15 @@ import java.util.ArrayList;
 public class CalculatorScene {
 
     private GridPane gridPane = new GridPane();
+    private Label display = new Label("");
+    private ArrayList<CalcButton> listOfButtons;
 
     public CalculatorScene() {
         //Creating a Grid Pane
         gridPane = new GridPane(3, 3);
 
         //display
-        Label display = new Label("");
+        display = new Label("");
 
         //enter
         Button btnEnter = new Button("Enter");
@@ -30,17 +32,17 @@ public class CalculatorScene {
         Button btnKoma = new Button(".");
 
         //numbers
-        ArrayList<CalcButton> listOfButtons = new ArrayList<>();
+        listOfButtons = new ArrayList<>();
         listOfButtons.add(new CalcButton("0", 0, 0,4));
-        listOfButtons.add(new CalcButton("1", 0, 0,3));
-        listOfButtons.add(new CalcButton("2", 0, 1,3));
-        listOfButtons.add(new CalcButton("3", 0, 2,3));
-        listOfButtons.add(new CalcButton("4", 0, 0,2));
-        listOfButtons.add(new CalcButton("5", 0, 1,2));
-        listOfButtons.add(new CalcButton("6", 0, 2,2));
-        listOfButtons.add(new CalcButton("7", 0, 0,1));
-        listOfButtons.add(new CalcButton("8", 0, 1,1));
-        listOfButtons.add(new CalcButton("9", 0, 2,1));
+        listOfButtons.add(new CalcButton("1", 1, 0,3));
+        listOfButtons.add(new CalcButton("2", 2, 1,3));
+        listOfButtons.add(new CalcButton("3", 3, 2,3));
+        listOfButtons.add(new CalcButton("4", 4, 0,2));
+        listOfButtons.add(new CalcButton("5", 5, 1,2));
+        listOfButtons.add(new CalcButton("6", 6, 2,2));
+        listOfButtons.add(new CalcButton("7", 7, 0,1));
+        listOfButtons.add(new CalcButton("8", 8, 1,1));
+        listOfButtons.add(new CalcButton("9", 9, 2,1));
 
         for (CalcButton btn : listOfButtons){
             gridPane.add(btn, btn.getCol(), btn.getRow());
@@ -59,5 +61,17 @@ public class CalculatorScene {
 
     public GridPane getGridPane() {
         return gridPane;
+    }
+
+    public Label getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(Label display) {
+        this.display = display;
+    }
+
+    public ArrayList<CalcButton> getListOfButtons() {
+        return listOfButtons;
     }
 }

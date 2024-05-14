@@ -1,5 +1,6 @@
 package at.mklestil.calculatorjavafx;
 
+import at.mklestil.calculatorjavafx.control.CalculatorController;
 import at.mklestil.calculatorjavafx.view.CalculatorScene;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +14,10 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Erstelle die Hauptansicht
-        CalculatorScene calculator = new CalculatorScene();
+        CalculatorScene viewCalc = new CalculatorScene();
+        CalculatorController controller = new CalculatorController(viewCalc);
 
-        Scene scene = new Scene(calculator.getGridPane(), 500, 600);
+        Scene scene = new Scene(viewCalc.getGridPane(), 500, 600);
 
         // Setze die Szene
         primaryStage.setTitle("Calculator");

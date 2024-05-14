@@ -14,21 +14,14 @@ public class CalcButton extends Button {
     private int col;
 
 
-    public CalcButton(String name, int value, int col, int row) {
+    public CalcButton(String name, int val, int col, int row) {
         this.name = name;
-        this.value = value;
+        this.value = val;
         this.setText(name);
         this.row = row;
         this.col = col;
 
         this.setMaxSize(80,80);
-
-        this.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                System.out.println(value);
-            }
-        });
     }
 
     public String getName() {
