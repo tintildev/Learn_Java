@@ -1,6 +1,5 @@
 package at.mklestil.calculatorjavafx.view;
 
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -11,7 +10,8 @@ public class CalculatorScene {
 
     private GridPane gridPane = new GridPane();
     private Label display = new Label("");
-    private ArrayList<CalcButton> listOfButtons;
+    private ArrayList<NumberButton> listOfButtons;
+    private ArrayList<OperatorButton> listOfOperatorButtons;
 
     public CalculatorScene() {
         //Creating a Grid Pane
@@ -25,36 +25,38 @@ public class CalculatorScene {
         GridPane.setColumnSpan(btnEnter, 3);
 
         //math
-        Button btnPlus = new Button("+");
-        Button btnMinus = new Button("-");
-        Button btnMal = new Button("*");
-        Button btnDiv = new Button("/");
-        Button btnKoma = new Button(".");
+        listOfOperatorButtons = new ArrayList<>();
+        listOfOperatorButtons.add(new OperatorButton("+", "+", 4,4));
+        listOfOperatorButtons.add(new OperatorButton("-", "-", 4,3));
+        listOfOperatorButtons.add(new OperatorButton("*", "*", 4,2));
+        listOfOperatorButtons.add(new OperatorButton("/", "/", 4,1));
+        listOfOperatorButtons.add(new OperatorButton(".", ".", 2,4));
+        listOfOperatorButtons.add(new OperatorButton("Enter", "Enter", 0,5));
 
         //numbers
         listOfButtons = new ArrayList<>();
-        listOfButtons.add(new CalcButton("0", 0, 0,4));
-        listOfButtons.add(new CalcButton("1", 1, 0,3));
-        listOfButtons.add(new CalcButton("2", 2, 1,3));
-        listOfButtons.add(new CalcButton("3", 3, 2,3));
-        listOfButtons.add(new CalcButton("4", 4, 0,2));
-        listOfButtons.add(new CalcButton("5", 5, 1,2));
-        listOfButtons.add(new CalcButton("6", 6, 2,2));
-        listOfButtons.add(new CalcButton("7", 7, 0,1));
-        listOfButtons.add(new CalcButton("8", 8, 1,1));
-        listOfButtons.add(new CalcButton("9", 9, 2,1));
+        listOfButtons.add(new NumberButton("0", 0, 0,4));
+        listOfButtons.add(new NumberButton("1", 1, 0,3));
+        listOfButtons.add(new NumberButton("2", 2, 1,3));
+        listOfButtons.add(new NumberButton("3", 3, 2,3));
+        listOfButtons.add(new NumberButton("4", 4, 0,2));
+        listOfButtons.add(new NumberButton("5", 5, 1,2));
+        listOfButtons.add(new NumberButton("6", 6, 2,2));
+        listOfButtons.add(new NumberButton("7", 7, 0,1));
+        listOfButtons.add(new NumberButton("8", 8, 1,1));
+        listOfButtons.add(new NumberButton("9", 9, 2,1));
 
-        for (CalcButton btn : listOfButtons){
+        //Add to Gridpane
+        for (NumberButton btn : listOfButtons){
             gridPane.add(btn, btn.getCol(), btn.getRow());
         }
 
+        for(OperatorButton oBtn : listOfOperatorButtons){
+            gridPane.add(oBtn, oBtn.getCol(), oBtn.getRow());
+        }
+
         gridPane.add(display, 0, 0);
-        gridPane.add(btnKoma, 2, 4);
-        gridPane.add(btnPlus, 4, 4);
-        gridPane.add(btnMinus, 4, 3);
-        gridPane.add(btnMal, 4, 2);
-        gridPane.add(btnDiv, 4, 1);
-        gridPane.add(btnEnter, 0, 5);
+
 
 
     }
@@ -63,15 +65,17 @@ public class CalculatorScene {
         return gridPane;
     }
 
-    public Label getDisplay() {
-        return display;
+    public String getDisplay() {
+
+        return display.getText();
     }
 
-    public void setDisplay(Label display) {
-        this.display = display;
+    public void setDisplay(String text) {
+
+        display.setText(text);
     }
 
-    public ArrayList<CalcButton> getListOfButtons() {
+    public ArrayList<NumberButton> getListOfButtons() {
         return listOfButtons;
     }
 }

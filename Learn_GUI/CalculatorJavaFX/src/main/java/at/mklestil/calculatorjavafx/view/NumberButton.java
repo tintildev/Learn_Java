@@ -1,10 +1,8 @@
 package at.mklestil.calculatorjavafx.view;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
-public class CalcButton extends Button {
+public class NumberButton extends Button {
 
     private String name;
     private int value;
@@ -14,7 +12,7 @@ public class CalcButton extends Button {
     private int col;
 
 
-    public CalcButton(String name, int val, int col, int row) {
+    public NumberButton(String name, int val, int col, int row) {
         this.name = name;
         this.value = val;
         this.setText(name);
