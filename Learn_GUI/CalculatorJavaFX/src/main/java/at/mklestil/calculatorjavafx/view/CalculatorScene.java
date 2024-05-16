@@ -78,4 +78,8 @@ public class CalculatorScene {
     public ArrayList<NumberButton> getListOfButtons() {
         return listOfButtons;
     }
+
+    public ArrayList<OperatorButton> getListOfOperatorButtons() {
+        return listOfOperatorButtons;
+    }
 }
