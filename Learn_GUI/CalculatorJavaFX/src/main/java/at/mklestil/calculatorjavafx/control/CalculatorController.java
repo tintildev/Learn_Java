@@ -16,7 +16,10 @@ public class CalculatorController {
     private double number1 = 0;
     private double number2 = 0;
 
+    private String operator = "";
+
     private boolean check = false;
+    private boolean oCheck = false;
 
     private MathModel model = new MathModel();
 
@@ -42,7 +45,7 @@ public class CalculatorController {
             @Override
             public void handle(Event event) {
                 view.setDisplay("" + btn.getValue());
-                if (check == false){
+                if (oCheck == false){
                     number1 = btn.getValue();
                 }else{
                     number2 = btn.getValue();
@@ -58,14 +61,28 @@ public class CalculatorController {
             public void handle(Event event) {
                 view.setDisplay("" + btn.getTyp());
                 System.out.println(btn.getTyp());
-                if (!btn.getTyp().equals("Enter")){
+                if (!btn.getTyp().equals("Enter") && !btn.getTyp().equals(".")) {
+                    oCheck = true;
+                    operator = btn.getTyp();
+                } else if (btn.getTyp().equals("Enter")) {
                     check = true;
-                }else {
-                    System.out.println("Enter gedrückt, number1 " + number1 + " numb2 " + number2);
+                    double value = model.getMath(number1, number2, operator);
+                    System.out.println(value);
+                    view.setDisplay("" + value);
+                    resetCheck();
+            }else {
+                    System.out.println(". pressed");
                 }
             }
         };
         return eventHandler;
+    }
+
+    private void resetCheck() {
+        check = false;
+        oCheck = false;
+        number1 = 0;
+        number2 = 0;
     }
 
 }
