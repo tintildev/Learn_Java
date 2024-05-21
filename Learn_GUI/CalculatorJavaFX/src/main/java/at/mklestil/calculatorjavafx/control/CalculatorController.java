@@ -61,7 +61,7 @@ public class CalculatorController {
             public void handle(Event event) {
                 view.setDisplay("" + btn.getTyp());
                 System.out.println(btn.getTyp());
-                if (!btn.getTyp().equals("Enter") && !btn.getTyp().equals(".")) {
+                if (!btn.getTyp().equals("Enter") && !btn.getTyp().equals(".") && !btn.getTyp().equals("Clear")) {
                     oCheck = true;
                     operator = btn.getTyp();
                 } else if (btn.getTyp().equals("Enter")) {
@@ -70,8 +70,12 @@ public class CalculatorController {
                     System.out.println(value);
                     view.setDisplay("" + value);
                     resetCheck();
-            }else {
+                }else if(btn.getTyp().equals(".")){
                     System.out.println(". pressed");
+                }
+                else if(btn.getTyp().equals("Clear")){
+                    System.out.println("Clear");
+                    view.setDisplay("");
                 }
             }
         };

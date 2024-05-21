@@ -12,7 +12,32 @@ public class OperatorButton extends Button {
         this.setText(name);
         this.row = row;
         this.col = col;
+        setTyp(typ);
+        this.setMinWidth(40);
+        this.setMinHeight(40);
+    }
 
+    public OperatorButton(String name, String typ, int col, int row, int with) {
+        this.name = name;
+        this.setText(name);
+        this.row = row;
+        this.col = col;
+        setTyp(typ);
+        setMinWidth(with);
+        setMinHeight(40);
+    }
+
+    public OperatorButton(String name, String typ, int col, int row, int with, int height) {
+        this.name = name;
+        this.setText(name);
+        this.row = row;
+        this.col = col;
+        setTyp(typ);
+        setMinWidth(with);
+        setMinHeight(height);
+    }
+
+    public void setTyp(String typ){
         switch (typ){
             case "+":
                 this.typ = typ;
@@ -32,11 +57,12 @@ public class OperatorButton extends Button {
             case "Enter":
                 this.typ = typ;
                 break;
+            case "Clear":
+                this.typ = typ;
+                break;
             default:
                 System.out.println("Error: Worng Typ");
         }
-
-        this.setMaxSize(80,80);
     }
 
     public String getName() {

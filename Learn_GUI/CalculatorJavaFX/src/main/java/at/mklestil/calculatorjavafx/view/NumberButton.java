@@ -18,8 +18,18 @@ public class NumberButton extends Button {
         this.setText(name);
         this.row = row;
         this.col = col;
+        this.setMinWidth(40);
+        this.setMinHeight(40);
+    }
 
-        this.setMaxSize(80,80);
+    public NumberButton(String name, int val, int col, int row, int with) {
+        this.name = name;
+        this.value = val;
+        this.setText(name);
+        this.row = row;
+        this.col = col;
+        this.setMinWidth(with);
+        this.setMinHeight(40);
     }
 
     public String getName() {
