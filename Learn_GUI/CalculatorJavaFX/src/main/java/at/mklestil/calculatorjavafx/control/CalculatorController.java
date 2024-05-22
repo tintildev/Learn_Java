@@ -16,6 +16,8 @@ public class CalculatorController {
     private double number1 = 0;
     private double number2 = 0;
 
+    private double numberKoma = 0;
+
     private String operator = "";
 
     private boolean check = false;
@@ -46,9 +48,9 @@ public class CalculatorController {
             public void handle(Event event) {
                 view.setDisplay("" + btn.getValue());
                 if (oCheck == false){
-                    number1 = btn.getValue();
+                    number1 = btn.getValue() + numberKoma;
                 }else{
-                    number2 = btn.getValue();
+                    number2 = btn.getValue() + numberKoma;
                 }
             }
         };
@@ -72,6 +74,13 @@ public class CalculatorController {
                     resetCheck();
                 }else if(btn.getTyp().equals(".")){
                     System.out.println(". pressed");
+                    if(oCheck){
+                        numberKoma = number2 / 10.0 ;
+                    }else {
+                        numberKoma = number1 / 10.0;
+                    }
+                    System.out.println("Koma: " + numberKoma);
+
                 }
                 else if(btn.getTyp().equals("Clear")){
                     System.out.println("Clear");
@@ -87,6 +96,7 @@ public class CalculatorController {
         oCheck = false;
         number1 = 0;
         number2 = 0;
+        numberKoma = 0;
     }
 
 }
