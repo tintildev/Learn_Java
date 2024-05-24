@@ -17,7 +17,7 @@ public class App extends Application {
         CalculatorScene viewCalc = new CalculatorScene();
         CalculatorController controller = new CalculatorController(viewCalc);
 
-        Scene scene = new Scene(viewCalc.getGridPane(), 500, 600);
+        Scene scene = new Scene(viewCalc.getGridPane(), 250, 300);
 
         // Setze die Szene
         primaryStage.setTitle("Calculator");

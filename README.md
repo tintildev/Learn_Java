@@ -28,6 +28,7 @@ I revised this repository at the end of 2021 and will now expand it regularly.
 - Reaction Time Tester - Java, Swing
 - WordCounter - Java, Swing
 - Tic Tac Toe - Java, Swing
+- Calculator - Java, JavaFX
 - Spring Hello World - the Spring Quickstart Guide
 - Spring TodoList - my first TodoList in Spring
 - Spark - first spark framework project
@@ -39,14 +40,14 @@ ToDoList:
 Reaction Time Tester:  
 ![](./images/reaction-time-tester.png)  
 
-
 WordCounter:  
 ![](./images/wordcounter.png)  
-
 
 TicTacToe:  
 ![](./images/tictactoe.png)  
 
+Calculator:  
+![](./images/calculatorJavaFX.png)  
 
 Spring Hello World:  
 ![](./images/springHelloWorld.png)  
@@ -57,7 +58,7 @@ Spring ToDoList:
 ### Resources
 
 - Java 1.8 or higher
-- Gradle (with Java 1.8, because gradle doesn't support java 18 yet 2022-09)
+- Gradle 
 
 
 I'm just trying to use my own pictures and icons.
@@ -68,7 +69,6 @@ I'm just trying to use my own pictures and icons.
 ## Author
 
 - Website - [Martin Klestil](https://github.com/mklestil)
-- Twitter - [@mklestil](https://twitter.com/MKlestil)
 - Linkedin - [@mklestil](https://www.linkedin.com/in/martin-klestil/)
 
 

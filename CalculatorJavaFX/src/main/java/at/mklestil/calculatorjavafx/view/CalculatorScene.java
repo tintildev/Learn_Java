@@ -1,5 +1,6 @@
 package at.mklestil.calculatorjavafx.view;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Border;
@@ -64,6 +65,7 @@ public class CalculatorScene {
         GridPane.setRowSpan(btnEnter, 2);
 
         gridPane.add(display, 0, 0);
+        gridPane.setAlignment(Pos.CENTER); //view center
 
 
 
