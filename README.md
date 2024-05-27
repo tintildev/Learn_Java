@@ -15,10 +15,11 @@ A repository that I use to learn Java.
 With this repository I would like to improve my Java skills. I'm learning with the Java Roadmap from roadmap.sh and trying to implement my own projects on the topics.
 
 - Java
-- Swing, AWT, JavaFX
+- Basics, Serialization, Networking, Streams ...
+- GUI, Swing, AWT, JavaFX
 - JUnit
-- Maven, Gradle
-- Spring, Spark
+- Build Tools, Maven, Gradle
+- Web, Spring, Spark
 
 ### Projects
 
@@ -58,7 +59,9 @@ Spring ToDoList:
 ### Resources
 
 - Java 1.8 or higher
-- Gradle 
+- Gradle, Maven
+- JUnit
+- Spring, Spring Boot 
 
 
 I'm just trying to use my own pictures and icons.
