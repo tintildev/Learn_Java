@@ -12,7 +12,7 @@ A repository that I use to learn Java.
 - [Author](#author)
 
 ### Goals
-I revised this repository at the end of 2021 and will now expand it regularly.
+With this repository I would like to improve my Java skills. I'm learning with the Java Roadmap from roadmap.sh and trying to implement my own projects on the topics.
 
 - Java
 - Swing, AWT, JavaFX
