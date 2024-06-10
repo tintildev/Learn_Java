@@ -12,14 +12,27 @@ A repository that I use to learn Java.
 - [Author](#author)
 
 ### Goals
+<<<<<<< Updated upstream
 With this repository I would like to improve my Java skills. I'm learning with the Java Roadmap from roadmap.sh and trying to implement my own projects on the topics.
+=======
+I would like to improve my Java knowledge with practice projects. Basically, I stick to the Java roadmap when learning.
+>>>>>>> Stashed changes
 
+Here are some technologies I have worked with:
 - Java
+<<<<<<< Updated upstream
 - Basics, Serialization, Networking, Streams ...
 - GUI, Swing, AWT, JavaFX
+=======
+  - Serialization
+  - Networking & Sockets
+  - Streams
+- Swing, AWT, JavaFX
+>>>>>>> Stashed changes
 - JUnit
 - Build Tools, Maven, Gradle
 - Web, Spring, Spark
+
 
 ### Projects
 
@@ -59,7 +72,12 @@ Spring ToDoList:
 ### Resources
 
 - Java 1.8 or higher
+<<<<<<< Updated upstream
 - Gradle, Maven
+=======
+- Maven
+- Gradle
+>>>>>>> Stashed changes
 - JUnit
 - Spring, Spring Boot 
 
