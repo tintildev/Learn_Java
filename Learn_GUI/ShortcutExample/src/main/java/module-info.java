@@ -1,6 +1,7 @@
 module at.mklestil.shortcutexample {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens at.mklestil.shortcutexample to javafx.fxml;

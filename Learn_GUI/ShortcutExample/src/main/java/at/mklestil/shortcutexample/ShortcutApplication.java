@@ -1,5 +1,6 @@
 package at.mklestil.shortcutexample;
 
+import at.mklestil.shortcutexample.controll.MyController;
 import at.mklestil.shortcutexample.view.ShortCutView;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ public class ShortcutApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         ShortCutView view = new ShortCutView();
+        MyController controller = new MyController(view);
         Scene scene = new Scene(view.getRoot(), 400, 90);
         //Add CSS
         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

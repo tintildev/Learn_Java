@@ -1,5 +1,7 @@
 package at.mklestil.shortcutexample.view;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -7,13 +9,15 @@ import javafx.scene.image.ImageView;
 public class MyButton extends Button {
 
     private String css = "";
+    private String url = "";
 
     public MyButton() {
         this.setPrefSize(64,64);
     }
 
-    public MyButton(String css, String imgPath){
+    public MyButton(String css, String imgPath, String url){
         this.css = css;
+        this.url = url;
         this.getStyleClass().add(this.css);
         this.setPrefSize(64,64);
 
@@ -28,5 +32,9 @@ public class MyButton extends Button {
         }
 
         this.setGraphic(imgView);
+    }
+
+    public String getUrl() {
+        return url;
     }
 }
