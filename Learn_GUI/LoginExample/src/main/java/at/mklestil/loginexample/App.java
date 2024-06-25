@@ -1,21 +1,21 @@
 package at.mklestil.loginexample;
 
+import at.mklestil.loginexample.view.MyView;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        GridPane root = new GridPane();
+        MyView view = new MyView();
 
-        Scene scene = new Scene(root, 400, 400);
+
+        Scene scene = new Scene(view.getRoot(), 250, 150);
 
         stage.setScene(scene);
         stage.show();

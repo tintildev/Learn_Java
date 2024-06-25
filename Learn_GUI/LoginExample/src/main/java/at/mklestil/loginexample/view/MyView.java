@@ -1,5 +1,6 @@
 package at.mklestil.loginexample.view;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -17,6 +18,12 @@ public class MyView {
         PasswordField pw = new PasswordField();
         Button btn = new Button("Login");
 
+        root.add(infoLabel, 0 ,0);
+        root.add(user, 0, 1);
+        root.add(pw, 0, 2);
+        root.add(btn, 0, 3);
+
+        root.setAlignment(Pos.CENTER);
 
     }
 
