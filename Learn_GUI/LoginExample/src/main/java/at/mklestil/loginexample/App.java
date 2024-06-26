@@ -1,5 +1,6 @@
 package at.mklestil.loginexample;
 
+import at.mklestil.loginexample.controll.MyController;
 import at.mklestil.loginexample.view.MyView;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         MyView view = new MyView();
+        MyController controller = new MyController(view);
 
 
         Scene scene = new Scene(view.getRoot(), 250, 150);
