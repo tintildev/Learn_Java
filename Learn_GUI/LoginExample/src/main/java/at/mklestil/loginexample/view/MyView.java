@@ -10,13 +10,14 @@ import javafx.scene.layout.GridPane;
 public class MyView {
     private GridPane root = new GridPane();
 
+    private TextField user = new TextField("Username");
+    private PasswordField pw = new PasswordField();
+    private Button btn = new Button("Login");
+
 
     public MyView() {
 
         Label infoLabel = new Label("Login:");
-        TextField user = new TextField("Username");
-        PasswordField pw = new PasswordField();
-        Button btn = new Button("Login");
 
         root.add(infoLabel, 0 ,0);
         root.add(user, 0, 1);
@@ -29,5 +30,17 @@ public class MyView {
 
     public GridPane getRoot() {
         return root;
+    }
+
+    public TextField getUser() {
+        return user;
+    }
+
+    public PasswordField getPw() {
+        return pw;
+    }
+
+    public Button getBtn() {
+        return btn;
     }
 }
