@@ -12,8 +12,13 @@ public class MyView {
 
     public MyView() {
 
+        Image image = new Image(getClass().getResourceAsStream("/images/Dock.png"));
         //Dock
-        ImageView imageview = new ImageView(new Image("../Image/Dock.png"));
+        ImageView imageViewDock = new ImageView(image);
+        imageViewDock.setTranslateX(12);
+        imageViewDock.setTranslateY(100);
+
+        root.getChildren().add(imageViewDock);
     }
 
     public Group getRoot() {
