@@ -10,7 +10,7 @@ public class MyController {
         this.view = view;
         DockHandler dockHandler = new DockHandler();
 
-        //Add Event Handler
-
+        //Add Event Handler, exit by 2 clicks
+        this.view.getImageViewDock().setOnMouseClicked(dockHandler.getMouseEventEventHandler());
     }
 }
