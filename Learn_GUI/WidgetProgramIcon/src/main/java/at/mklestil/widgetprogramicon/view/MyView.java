@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 public class MyView {
     private Group root = new Group();
 
-    private final String[] icons = {"browser.png", "ide.png", "mail.png", "textfile.png" };
+    private final String[] icons = {"home.png", "browser.png", "ide.png", "mail.png", "textfile.png" };
 
     public MyView() {
 
