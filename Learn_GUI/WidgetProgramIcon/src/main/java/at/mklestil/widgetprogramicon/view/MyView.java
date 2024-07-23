@@ -9,7 +9,7 @@ public class MyView {
     private Group root = new Group();
     private ImageView imageViewDock;
 
-    private final String[] icons = {"home.png", "browser.png", "ide.png", "mail.png", "textfile.png" };
+    private final String[] icons = {"Home.png", "IDE.png", "Mail.png" };
 
     public MyView() {
 
@@ -20,6 +20,11 @@ public class MyView {
         imageViewDock.setTranslateY(100);
 
         root.getChildren().add(imageViewDock);
+
+        for(String icon : icons){
+            IconImageView iconImageView = new IconImageView(icon);
+            root.getChildren().add(iconImageView);
+        }
     }
 
     public Group getRoot() {
