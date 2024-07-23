@@ -1,6 +1,7 @@
 package at.mklestil.widgetprogramicon.view;
 
 import javafx.scene.Group;
+import javafx.scene.effect.Reflection;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -21,9 +22,12 @@ public class MyView {
 
         root.getChildren().add(imageViewDock);
 
-        for(String icon : icons){
-            IconImageView iconImageView = new IconImageView(icon);
-            root.getChildren().add(iconImageView);
+        for(int i = 0; i < icons.length; i++){
+            IconImageView icon = new IconImageView(icons[i]);
+            icon.setTranslateX(90+80 * i);
+            icon.setTranslateY(100);
+            icon.setEffect(new Reflection());
+            root.getChildren().add(icon);
         }
     }
 
