@@ -6,11 +6,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
+import java.util.ArrayList;
+
 public class MyView {
     private Group root = new Group();
     private ImageView imageViewDock;
 
-    private final String[] icons = {"Home.png", "IDE.png", "Mail.png" };
+    private final String[] icons = {"Home.png", "IDE.png", "Mail.png", "Explorer.png" };
+    private ArrayList<IconImageView> iconsList = new ArrayList<>();
 
     public MyView() {
 
@@ -28,6 +31,7 @@ public class MyView {
             icon.setTranslateY(100);
             icon.setEffect(new Reflection());
             root.getChildren().add(icon);
+            iconsList.add(icon);
         }
     }
 
@@ -37,5 +41,9 @@ public class MyView {
 
     public ImageView getImageViewDock() {
         return imageViewDock;
+    }
+
+    public ArrayList<IconImageView> getIconsList() {
+        return iconsList;
     }
 }
