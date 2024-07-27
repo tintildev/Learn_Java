@@ -12,7 +12,7 @@ public class MyView {
     private Group root = new Group();
     private ImageView imageViewDock;
 
-    private final String[] icons = {"Home.png", "IDE.png", "Mail.png", "Explorer.png" };
+    private final String[] icons = {"Browser.png", "IDE.png", "Mail.png", "Text.png" };
     private ArrayList<IconImageView> iconsList = new ArrayList<>();
 
     public MyView() {
