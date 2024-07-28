@@ -1,10 +1,13 @@
 package at.mklestil.widgetprogramicon.view;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.effect.Reflection;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Screen;
 
 import java.util.ArrayList;
 
@@ -16,7 +19,6 @@ public class MyView {
     private ArrayList<IconImageView> iconsList = new ArrayList<>();
 
     public MyView() {
-
         Image image = new Image(getClass().getResourceAsStream("/images/Dock.png"));
         //Dock
         imageViewDock = new ImageView(image);
