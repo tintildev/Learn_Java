@@ -26,7 +26,7 @@ public class App extends Application {
         //Transparent
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
-        
+
         stage.show();
 
         //Position
