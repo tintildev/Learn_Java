@@ -1,19 +1,23 @@
 package at.mklestil.listviewexample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import at.mklestil.listviewexample.view.MyView;
+import at.mklestil.listviewexample.control.MyController;
 
 import java.io.IOException;
 
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        //MVC
+        MyView view = new MyView();
+        MyController controller = new MyController(view);
+
+        //JavaFX
+        stage.setTitle("ListView Example");
+        stage.setScene(view.getScene());
         stage.show();
     }
 
