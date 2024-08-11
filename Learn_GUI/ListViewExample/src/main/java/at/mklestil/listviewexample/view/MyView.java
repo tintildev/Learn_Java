@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -33,6 +35,10 @@ public class MyView {
         //ListView methods
         listView.setItems(observableList);
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        //Editable
+        listView.setEditable(true);
+        listView.setCellFactory(TextFieldListCell.forListView());
 
         //VBox
         VBox vBox = new VBox();
