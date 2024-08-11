@@ -3,6 +3,8 @@ package at.mklestil.listviewexample.view;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -10,11 +12,14 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+
 public class MyView {
 
     private HBox root = new HBox(40);
     private Scene scene = new Scene(root, 600, 400);
     private ListView<String> listView;
+    private ArrayList<MyButton> buttons;
 
     public MyView() {
 
@@ -33,13 +38,17 @@ public class MyView {
         VBox vBox = new VBox();
 
         //Buttons
-        Button selectAll = new Button("Select All");
-        Button selectNothing = new Button("Select Nothing");
-        Button selectFirst = new Button("Select First");
-        Button selectLast = new Button("Select Last");
+        buttons = new ArrayList<>();
+        buttons.add(new MyButton("Select All", "all"));
+        buttons.add(new MyButton("Select Nothing", "nothing"));
+        buttons.add(new MyButton("Select First", "first"));
+        buttons.add(new MyButton("Select Last", "last"));
+
 
         //add Element VBox
-        vBox.getChildren().addAll(selectAll, selectFirst, selectLast, selectNothing);
+        for(MyButton myButton : buttons){
+            vBox.getChildren().add(myButton);
+        }
 
         //add element to root
         root.getChildren().add(listView);
@@ -53,6 +62,10 @@ public class MyView {
     public ListView<String> getListView() {
         //This is my HBox
         return listView;
+    }
+
+    public ArrayList<MyButton> getButtons() {
+        return buttons;
     }
 }
 
