@@ -56,6 +56,9 @@ public class MyView {
             vBox.getChildren().add(myButton);
         }
 
+        // CSS
+        root.setStyle("-fx-padding: 10;" );
+
         //add element to root
         root.getChildren().add(listView);
         root.getChildren().add(vBox);
