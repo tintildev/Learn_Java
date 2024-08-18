@@ -51,14 +51,18 @@ WordCounter:
 TicTacToe:  
 ![](./images/tictactoe.png)  
 
-Calculator:  
+JavaFX Calculator:  
 ![](./images/calculatorJavaFX.png)  
+
+JavaFX Dock:
+![](./images/widgetProgramIcon-JavaFX.png)  
 
 Spring Hello World:  
 ![](./images/springHelloWorld.png)  
 
 Spring ToDoList:
 ![](./images/springToDoList.png)  
+
 
 ### Resources
 
