@@ -55,7 +55,7 @@ JavaFX Calculator:
 ![](./images/calculatorJavaFX.png)  
 
 JavaFX Dock:
-![](./images/widgetProgramIcon-JavaFX.png)  
+![](./images/widgetProgramIcon.png)  
 
 Spring Hello World:  
 ![](./images/springHelloWorld.png)  
