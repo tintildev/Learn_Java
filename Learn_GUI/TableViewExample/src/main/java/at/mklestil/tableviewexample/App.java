@@ -13,7 +13,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         MyView view = new MyView();
         Scene scene = new Scene(view.getRoot(), 550, 450);
-        stage.setTitle("Hello!");
+        stage.setTitle("TableView Example");
         stage.setScene(scene);
         stage.show();
     }
