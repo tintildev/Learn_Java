@@ -1,14 +1,16 @@
 package at.mklestil.tableviewexample.control;
 
 import at.mklestil.tableviewexample.model.Person;
+import at.mklestil.tableviewexample.view.MyView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class MyController {
 
-    public MyController() {
+    public MyController(MyView view) {
 
         //Creat Test Data and work with view
+        view.setData(getUserList());
 
     }
 
