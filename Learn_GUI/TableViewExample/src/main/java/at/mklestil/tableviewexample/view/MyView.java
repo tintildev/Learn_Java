@@ -1,5 +1,6 @@
 package at.mklestil.tableviewexample.view;
 
+import at.mklestil.tableviewexample.model.Person;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -19,15 +20,15 @@ public class MyView {
         userLabel.setFont(new Font(20));
 
         // TableView
-        TableView<String> tableView = new TableView<String>();
+        TableView<Person> tableView = new TableView<Person>();
 
         // create table colum
-        TableColumn<String, String> userName = new TableColumn<String, String>("Username");
-        TableColumn<String, String> email = new TableColumn<String, String>("Email");
+        TableColumn<Person, String> userName = new TableColumn<Person, String>("Username");
+        TableColumn<Person, String> email = new TableColumn<Person, String>("Email");
 
-        TableColumn<String, String> fullName = new TableColumn<String, String>("Full Name");
-        TableColumn<String, String> firstName = new TableColumn<String, String>("First Name");
-        TableColumn<String, String> lastName = new TableColumn<String, String>("Last Name");
+        TableColumn<Person, String> fullName = new TableColumn<Person, String>("Full Name");
+        TableColumn<Person, String> firstName = new TableColumn<Person, String>("First Name");
+        TableColumn<Person, String> lastName = new TableColumn<Person, String>("Last Name");
         fullName.getColumns().addAll(firstName, lastName);
 
         tableView.getColumns().addAll(userName, email, fullName);
