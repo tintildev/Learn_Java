@@ -9,12 +9,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class MyView {
 
-    private Group root = new Group();
+    private BorderPane root = new BorderPane();
     private ObservableList<Person> data = FXCollections.observableArrayList();
 
     public MyView() {
@@ -46,9 +49,12 @@ public class MyView {
         // binde tableView on empty list, in setData update empty list
         tableView.setItems(data);
 
+        // TableView will always try to take up as much vertical space as possible within the VBox.
+        VBox.setVgrow(tableView, Priority.ALWAYS);
+
         // Add Nodes
         vBox.getChildren().addAll(userLabel, tableView);
-        root.getChildren().add(vBox);
+        root.setCenter(vBox);
     }
 
     public void setData(ObservableList<Person> dataList){
@@ -65,7 +71,7 @@ public class MyView {
 
     }
 
-    public Group getRoot() {
+    public BorderPane getRoot() {
         return root;
     }
 }
