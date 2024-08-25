@@ -3,12 +3,11 @@ package at.mklestil.tableviewexample.view;
 import at.mklestil.tableviewexample.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Priority;
@@ -48,6 +47,24 @@ public class MyView {
         lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         // binde tableView on empty list, in setData update empty list
         tableView.setItems(data);
+
+        //edit data
+        tableView.setEditable(true);
+        //set Cell Factory
+        userName.setCellFactory(TextFieldTableCell.<Person>forTableColumn());
+        //save data
+        userName.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Person, String>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<Person, String> event) {
+                // get edit value and postion
+                String newValue = event.getNewValue();
+                TablePosition<Person, String> position = event.getTablePosition();
+
+                // get from tableview the person object and edit
+                Person person = event.getTableView().getItems().get(position.getRow());
+                person.setUserName(newValue);
+            }
+        });
 
         // TableView will always try to take up as much vertical space as possible within the VBox.
         VBox.setVgrow(tableView, Priority.ALWAYS);
