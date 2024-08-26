@@ -11,25 +11,15 @@ import java.util.ArrayList;
 
 public class Window {
     private VBox root;
-    private MenuBar menu;
-    private ArrayList<Menu> menuItems = new ArrayList<Menu>();
+    private MyMenubar menu;
     private TextArea textArea;
 
     public Window() {
         root = new VBox();
-        menu = new MenuBar();
+        menu = new MyMenubar();
         textArea = new TextArea();
 
-        Menu data = new Menu("Data");
-        Menu edit = new Menu("Edit");
-        Menu view = new Menu("View");
-        menuItems.add(data);
-        menuItems.add(edit);
-        menuItems.add(view);
 
-        for(Menu item : menuItems){
-            menu.getMenus().add(item);
-        }
 
         root.getChildren().addAll(menu, textArea);
     }
