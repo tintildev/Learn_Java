@@ -17,7 +17,7 @@ public class App extends Application {
 
         Window view = new Window();
         MyController controller = new MyController(view);
-        Scene scene = new Scene(view.getRoot(), 320, 540);
+        Scene scene = new Scene(view.getRoot(), 320, 440);
         stage.setTitle("Notepad");
         stage.setScene(scene);
         stage.show();

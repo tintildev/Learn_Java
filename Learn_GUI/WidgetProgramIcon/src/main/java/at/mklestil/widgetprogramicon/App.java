@@ -23,6 +23,8 @@ public class App extends Application {
         Scene scene = new Scene(view.getRoot(), 520, 240);
         stage.setTitle("Hello World!");
         stage.setScene(scene);
+
+
         //Transparent
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
