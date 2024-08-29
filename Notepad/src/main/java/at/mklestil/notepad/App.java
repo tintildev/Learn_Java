@@ -1,10 +1,8 @@
 package at.mklestil.notepad;
 
 import at.mklestil.notepad.control.MyController;
-import at.mklestil.notepad.view.Window;
+import at.mklestil.notepad.view.MainWindow;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -15,7 +13,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         // In this Example, i create a notepad.
 
-        Window view = new Window();
+        MainWindow view = new MainWindow();
         MyController controller = new MyController(view);
         Scene scene = new Scene(view.getRoot(), 320, 440);
         stage.setTitle("Notepad");

@@ -1,21 +1,16 @@
 package at.mklestil.notepad.view;
 
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-import java.util.ArrayList;
-
-public class Window {
+public class MainWindow {
     private VBox root;
-    private MyMenubar menu;
+    private MenuBar menu;
     private TextArea textArea;
 
-    public Window() {
+    public MainWindow() {
         root = new VBox();
         menu = new MyMenubar();
         textArea = new TextArea();
@@ -26,5 +21,13 @@ public class Window {
 
     public VBox getRoot() {
         return root;
+    }
+
+    public MenuBar getMenu(){
+        return menu;
+    }
+
+    public TextArea getTextArea() {
+        return textArea;
     }
 }
