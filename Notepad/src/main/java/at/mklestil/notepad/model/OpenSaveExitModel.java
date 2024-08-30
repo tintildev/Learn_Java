@@ -10,10 +10,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class OpenSaveExitModel {
@@ -27,7 +24,6 @@ public class OpenSaveExitModel {
                 //open fileChooser
                 FileChooser fileChooser = new FileChooser();
                 File selectedFile = fileChooser.showOpenDialog(view.getRoot().getScene().getWindow());
-                view.getTextArea().setText("Test Open");
                 BufferedReader reader = null;
                 try {
                     reader = new BufferedReader(new FileReader(selectedFile));
@@ -53,6 +49,26 @@ public class OpenSaveExitModel {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                    }
+                }
+            }
+        });
+
+        //Save
+        menu1.get(1).setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                FileChooser fileChooser = new FileChooser();
+                File selectedFile = fileChooser.showSaveDialog(view.getRoot().getScene().getWindow());
+
+                if(selectedFile != null) { // Check if the user selected a file
+                    String text = view.getTextArea().getText();
+                    try {
+                        PrintWriter out = new PrintWriter(selectedFile);
+                        out.println(text);
+                        out.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             }

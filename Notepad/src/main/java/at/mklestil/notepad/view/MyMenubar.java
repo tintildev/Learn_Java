@@ -24,11 +24,9 @@ public class MyMenubar extends MenuBar {
         Menu data = new Menu("Data");
 
         MenuItem open = new MenuItem("Open");
-        MenuItem load = new MenuItem("Load");
         MenuItem save = new MenuItem("Save");
         MenuItem exit = new MenuItem("Exit");
         menuItemsData.add(open);
-        menuItemsData.add(load);
         menuItemsData.add(save);
         menuItemsData.add(exit);
 
