@@ -15,7 +15,6 @@ public class MyMenubar extends MenuBar {
         this.getMenus().add(getDataMenu());
         this.getMenus().add(getDataEdit());
         this.getMenus().add(getDataFormat());
-        this.getMenus().add(getDataView());
 
     }
 
@@ -45,10 +44,12 @@ public class MyMenubar extends MenuBar {
         MenuItem menuItem2 = new MenuItem("Copy");
         MenuItem menuItem3 = new MenuItem("Past");
         MenuItem menuItem4 = new MenuItem("Delete");
+        MenuItem menuItem5 = new MenuItem("Select All");
         menuItemsEdit.add(menuItem1);
         menuItemsEdit.add(menuItem2);
         menuItemsEdit.add(menuItem3);
         menuItemsEdit.add(menuItem4);
+        menuItemsEdit.add(menuItem5);
 
         for(MenuItem item: menuItemsEdit){
             edit.getItems().add(item);
@@ -75,25 +76,5 @@ public class MyMenubar extends MenuBar {
         }
 
         return format;
-    }
-
-    public Menu getDataView(){
-        ArrayList<MenuItem> menuItemsView = new ArrayList<MenuItem>();
-        Menu view = new Menu("View");
-
-        MenuItem open = new MenuItem("Open");
-        MenuItem load = new MenuItem("Load");
-        MenuItem save = new MenuItem("Save");
-        MenuItem exit = new MenuItem("Exit");
-        menuItemsView.add(open);
-        menuItemsView.add(load);
-        menuItemsView.add(save);
-        menuItemsView.add(exit);
-
-        for(MenuItem item: menuItemsView){
-            view.getItems().add(item);
-        }
-
-        return view;
     }
 }

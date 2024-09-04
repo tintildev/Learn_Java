@@ -19,6 +19,17 @@ public class EditModel {
         menu1.get(1).setOnAction(listenerCopy());
         menu1.get(2).setOnAction(listenerPast());
         menu1.get(3).setOnAction(listenerDelete());
+        menu1.get(4).setOnAction(listenerSelect());
+    }
+
+    private EventHandler<ActionEvent> listenerSelect() {
+        EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                view.getTextArea().selectAll();
+            }
+        };
+        return event;
     }
 
     public EventHandler<ActionEvent> listenerCut(){
