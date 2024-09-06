@@ -4,6 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,9 +34,11 @@ public class MyView {
             root.add(imageView, 0, 0);
         }
 
-        root.add(getOpacityBox(), 0, 1);
-        root.add(getSepiaBox(), 0, 2);
-        root.add(getScaleBox(), 0, 3);
+        Separator separator = new Separator();
+        root.add(separator, 0, 1);
+        root.add(getOpacityBox(), 0, 2);
+        root.add(getSepiaBox(), 0, 3);
+        root.add(getScaleBox(), 0, 4);
 
         root.setVgap(10);
         root.setHgap(10);
