@@ -21,13 +21,15 @@ public class MyView {
     private Label sepiaValue;
     private Label scaleValue;
 
+    private ImageView imageView;
+
     public MyView() {
         root = new GridPane();
 
         //Image
         if(getClass().getResourceAsStream("/Images/image.png") != null){
             Image image = new Image(getClass().getResourceAsStream("/Images/image.png"));
-            ImageView imageView = new ImageView(image);
+            imageView = new ImageView(image);
             root.add(imageView, 0, 0);
         }
 
@@ -45,7 +47,7 @@ public class MyView {
     }
 
     public HBox getOpacityBox(){
-        HBox opacityBox = new HBox();
+        HBox opacityBox = new HBox(5);
 
         Label opacityLabel = new Label("Opacity Level");
         opacitySlider = new Slider(0,1,1);
@@ -97,5 +99,9 @@ public class MyView {
 
     public Label getScaleValue() {
         return scaleValue;
+    }
+
+    public ImageView getImageView() {
+        return imageView;
     }
 }
