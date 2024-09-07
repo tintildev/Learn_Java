@@ -17,11 +17,12 @@ public class App extends Application {
         MyView view = new MyView();
         MyController controller = new MyController(view);
 
+
         //Icon
         Image icon = new Image(getClass().getResourceAsStream("/Images/Bild.png"));
 
         //JavaFX Stage, scene
-        Scene scene = new Scene(view.getRoot(), 500, 500);
+        Scene scene = new Scene(view.getRoot(), 500, 600);
         stage.setTitle("Hello World!");
         stage.setScene(scene);
         stage.getIcons().add(icon);

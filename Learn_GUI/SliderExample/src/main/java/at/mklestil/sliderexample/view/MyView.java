@@ -3,49 +3,61 @@ package at.mklestil.sliderexample.view;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class MyView {
+public class MyView{
 
-    private GridPane root;
+    private BorderPane root;
     private Slider opacitySlider;
     private Slider sepiaSlider;
     private Slider scaleSlider;
     private Label opacityValue;
     private Label sepiaValue;
     private Label scaleValue;
+    private MyMenubar menu;
 
     private ImageView imageView;
 
     public MyView() {
-        root = new GridPane();
+        root = new BorderPane();
+        menu = new MyMenubar();
+        root.setTop(menu);
+
+        GridPane gridPane = new GridPane();
+
 
         //Image
         if(getClass().getResourceAsStream("/Images/image.png") != null){
             Image image = new Image(getClass().getResourceAsStream("/Images/image.png"));
             imageView = new ImageView(image);
-            root.add(imageView, 0, 0);
+            gridPane.add(imageView, 0, 0);
         }
 
         Separator separator = new Separator();
-        root.add(separator, 0, 1);
-        root.add(getOpacityBox(), 0, 2);
-        root.add(getSepiaBox(), 0, 3);
-        root.add(getScaleBox(), 0, 4);
+        gridPane.add(separator, 0, 1);
+        gridPane.add(getOpacityBox(), 0, 2);
+        gridPane.add(getSepiaBox(), 0, 3);
+        gridPane.add(getScaleBox(), 0, 4);
 
-        root.setVgap(10);
-        root.setHgap(10);
-        root.setPadding(new Insets(10));
+        gridPane.setVgap(10);
+        gridPane.setHgap(10);
+        gridPane.setPadding(new Insets(10));
+
+        root.setCenter(gridPane);
     }
 
-    public GridPane getRoot() {
+    public BorderPane getRoot() {
         return root;
     }
 
@@ -106,5 +118,9 @@ public class MyView {
 
     public ImageView getImageView() {
         return imageView;
+    }
+
+    public MyMenubar getMenu() {
+        return menu;
     }
 }
