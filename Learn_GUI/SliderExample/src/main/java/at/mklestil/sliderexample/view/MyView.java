@@ -5,10 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.Separator;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -66,6 +63,8 @@ public class MyView{
 
         Label opacityLabel = new Label("Opacity Level");
         opacitySlider = new Slider(0,1,1);
+        Tooltip opacityTip = new Tooltip("Opacity Value");
+        opacitySlider.setTooltip(opacityTip);
         opacityValue = new Label(Double.toString(opacitySlider.getValue()));
         opacityBox.getChildren().addAll(opacityLabel, opacitySlider, opacityValue);
 
@@ -87,6 +86,8 @@ public class MyView{
 
         Label scaleLabel = new Label("Scaling Level");
         scaleSlider = new Slider(0,1,1);
+        Tooltip scaleTip = new Tooltip("1 is max Scale");
+        scaleSlider.setTooltip(scaleTip);
         scaleValue = new Label(Double.toString(scaleSlider.getValue()));
         scaleBox.getChildren().addAll(scaleLabel, scaleSlider, scaleValue);
         return  scaleBox;

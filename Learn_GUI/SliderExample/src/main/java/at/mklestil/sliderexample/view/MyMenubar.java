@@ -3,6 +3,7 @@ package at.mklestil.sliderexample.view;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Tooltip;
 
 public class MyMenubar extends MenuBar {
     private MenuItem open = new MenuItem("Open");
