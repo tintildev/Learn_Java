@@ -11,13 +11,13 @@ import javafx.scene.layout.VBox;
 public class MainWindow {
     private BorderPane root;
     private Label status;
-    private Label plus = new Label("+");
-    private Label minus = new Label("-");
+    private Button plus = new Button("+");
+    private Button minus = new Button("-");
     private ProgressIndicator progressIndicator;
     private Button startButton = new Button("Start");
     private Button breakButton = new Button("Break");
     private Button resetButton = new Button("Rest");
-    private int timeValue = 25;
+    private Label time;
 
     public MainWindow() {
         root = new BorderPane();
@@ -34,7 +34,7 @@ public class MainWindow {
 
         //Status and Time
         status = new Label("Wait");
-        Label time = new Label("25:00");
+        time = new Label("25:00");
 
         //Add root
         root.setTop(status);
@@ -51,5 +51,37 @@ public class MainWindow {
 
     public BorderPane getRoot() {
         return root;
+    }
+
+    public Label getStatus() {
+        return status;
+    }
+
+    public Button getPlus() {
+        return plus;
+    }
+
+    public Button getMinus() {
+        return minus;
+    }
+
+    public ProgressIndicator getProgressIndicator() {
+        return progressIndicator;
+    }
+
+    public Button getStartButton() {
+        return startButton;
+    }
+
+    public Button getBreakButton() {
+        return breakButton;
+    }
+
+    public Button getResetButton() {
+        return resetButton;
+    }
+
+    public Label getTimeLabel() {
+        return time;
     }
 }
