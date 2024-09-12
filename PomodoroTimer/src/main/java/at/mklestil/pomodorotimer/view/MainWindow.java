@@ -4,9 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 public class MainWindow {
     private BorderPane root;
@@ -33,7 +33,8 @@ public class MainWindow {
 
 
         //Status and Time
-        status = new Label("Wait");
+        status = new Label("Ready to start!");
+        status.setFont(Font.font("Roboto"));
         time = new Label("25:00");
 
         //Add root
@@ -47,6 +48,16 @@ public class MainWindow {
         vBox.setStyle("-fx-alignment: center;");
         BorderPane.setAlignment(status, Pos.CENTER);
         BorderPane.setAlignment(time, Pos.CENTER);
+
+        // create Background
+        BackgroundFill backgroundFill = new BackgroundFill(
+                Color.web("#55C57A"),  // color
+                null,  // Ecken (CornerRadii)
+                null   // Rand (Insets)
+        );
+
+        // set Background
+        root.setBackground(new Background(backgroundFill));
     }
 
     public BorderPane getRoot() {

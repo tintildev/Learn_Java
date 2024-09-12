@@ -54,21 +54,25 @@ public class MyController {
             timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateTimer()));
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
+            view.getStatus().setText("Do not give up!");
         }else {
             //Pause
             timeline.play();
+            view.getStatus().setText("Do not give up!");
         }
     }
 
     private void pauseTimer() {
         if (timeline != null) {
             timeline.pause();
+            view.getStatus().setText("Wait");
         }
     }
 
     private void resetTimer() {
         if (timeline != null) {
             timeline.stop();
+            view.getStatus().setText("Ready to start!");
 
         }
         remainingTime = workTime;  // Reset remainingTime to workTime
