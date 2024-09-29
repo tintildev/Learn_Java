@@ -10,12 +10,13 @@ public class MyController {
     private int workTime = 25 * 60; // 25 Minuten
     private int remainingTime = workTime;
     private Timeline timeline;
-
+    private String formatTime;
     private int progress = 0;
 
 
     public MyController(MainWindow view) {
         this.view = view;
+        formatTime = view.getTimeLabel().getText();
         this.view.getStartButton().setOnAction(e -> startTimer());
         this.view.getBreakButton().setOnAction(e -> pauseTimer());
         this.view.getResetButton().setOnAction(e -> resetTimer());
@@ -23,20 +24,6 @@ public class MyController {
         this.view.getPlus().setOnAction(e -> plusTime());
         this.view.getMinus().setOnAction(e -> minusTime());
 
-    }
-
-    private void plusTime() {
-        workTime = workTime + 60; // 1 min;
-        remainingTime = workTime;
-        view.getTimeLabel().setText(formatTime(remainingTime));
-    }
-    private void minusTime() {
-        // no negativ time
-        if (workTime > 60) {
-            workTime = workTime - 60; // 1 min;
-            remainingTime = workTime;
-            view.getTimeLabel().setText(formatTime(remainingTime));
-        }
     }
 
     private void updateTimer() {
@@ -80,14 +67,14 @@ public class MyController {
         }
     }
 
-    private void pauseTimer() {
+    public void pauseTimer() {
         if (timeline != null) {
             timeline.pause();
             view.getStatus().setText("Wait");
         }
     }
 
-    private void resetTimer() {
+    public void resetTimer() {
         if (timeline != null) {
             timeline.stop();
             view.getStatus().setText("Ready to start!");
@@ -98,10 +85,44 @@ public class MyController {
         view.getPlantImageView().setImage(view.getPlantStages()[0]); //reset image
     }
 
-    private String formatTime(int seconds) {
-        int minutes = seconds / 60;
-        int secs = seconds % 60;
-        return String.format("%02d:%02d", minutes, secs);
+    public void plusTime() {
+        workTime = workTime + 60; // 1 min;
+        remainingTime = workTime;
+        view.getTimeLabel().setText(formatTime(remainingTime));
+    }
+    public void minusTime() {
+        // no negativ time
+        if (workTime > 60) {
+            workTime = workTime - 60; // 1 min;
+            remainingTime = workTime;
+            view.getTimeLabel().setText(formatTime(remainingTime));
+        }
     }
 
+    public String formatTime(int seconds) {
+        int minutes = seconds / 60;
+        int secs = seconds % 60;
+        formatTime = String.format("%02d:%02d", minutes, secs);
+        return formatTime;
+    }
+
+    public String getFormatTime() {
+        return formatTime;
+    }
+
+    public int getWorkTime() {
+        return workTime;
+    }
+
+    public int getRemainingTime() {
+        return remainingTime;
+    }
+
+    public Timeline getTimeline() {
+        return timeline;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
 }

@@ -120,7 +120,7 @@ public class MainWindow {
         return minus;
     }
 
-    public ProgressIndicator getProgress() {
+    public ProgressBar getProgress() {
         return progress;
     }
 
