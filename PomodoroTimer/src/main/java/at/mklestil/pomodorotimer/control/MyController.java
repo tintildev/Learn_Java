@@ -44,7 +44,6 @@ public class MyController {
             remainingTime--;
             double progressTime = (double) (workTime - remainingTime) / workTime;
             view.getProgress().setProgress(progressTime);
-            System.out.println(progressTime);
             view.getTimeLabel().setText(formatTime(remainingTime));
 
             //Change Images
@@ -53,6 +52,7 @@ public class MyController {
 
                 // calculate image stage with the progress
                 int stage = progress / 20;  // 5 images, at all 20%
+                //System.out.println("% : " + progress / 20);
 
                 // check stage and image length
                 if(stage >= 0 && stage < view.getPlantStages().length) {

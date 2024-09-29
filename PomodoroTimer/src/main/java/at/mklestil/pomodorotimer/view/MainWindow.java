@@ -11,6 +11,9 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+import java.io.InputStream;
+import java.util.ArrayList;
+
 public class MainWindow {
     private BorderPane root;
     private Label status;
@@ -74,11 +77,31 @@ public class MainWindow {
     }
 
     public void initialTrees(){
-        plantStages[0] = new Image(getClass().getResourceAsStream("/images/start.png"));
-        plantStages[1] = new Image(getClass().getResourceAsStream("/images/1_tree.png"));
-        plantStages[2] = new Image(getClass().getResourceAsStream("/images/2_tree.png"));
-        plantStages[3] = new Image(getClass().getResourceAsStream("/images/3_tree.png"));
-        plantStages[4] = new Image(getClass().getResourceAsStream("/images/4_tree.png"));
+        //Image Path, in the future delete hard code
+        ArrayList<String> imagePath = new ArrayList<>();
+        imagePath.add("/images/start.png");
+        imagePath.add("/images/1_tree.png");
+        imagePath.add("/images/2_tree.png");
+        imagePath.add("/images/3_tree.png");
+        imagePath.add("/images/4_tree.png");
+
+        // Add img plantStages
+        for (int i = 0; i < imagePath.size(); i++){
+            //Check Stream Path
+            InputStream inputStream = getClass().getResourceAsStream(imagePath.get(i));
+            if(inputStream != null){
+                //Check Image is correct
+                Image image = new Image(inputStream);
+                if(!image.isError()){
+                    plantStages[i] = image;
+                }else {
+                    System.out.println("Error loading image: " + imagePath.get(i));
+                }
+            }else{
+                System.out.println("Image file not found.");
+            }
+        }
+
     }
 
     public BorderPane getRoot() {
