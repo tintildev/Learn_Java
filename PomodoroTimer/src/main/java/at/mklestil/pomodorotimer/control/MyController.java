@@ -59,7 +59,7 @@ public class MyController {
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
             view.getStatus().setText("Do not give up!");
-            view.getPlantImageView().setImage(view.getPlantStages()[1]);
+            view.getPlantImageView().setImage(view.getPlantStages()[0]);
         }else {
             //Pause
             timeline.play();

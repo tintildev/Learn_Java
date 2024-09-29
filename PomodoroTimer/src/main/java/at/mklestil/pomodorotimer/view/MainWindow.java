@@ -84,6 +84,7 @@ public class MainWindow {
         imagePath.add("/images/2_tree.png");
         imagePath.add("/images/3_tree.png");
         imagePath.add("/images/4_tree.png");
+        imagePath.add("/images/5_tree.png");
 
         // Add img plantStages
         for (int i = 0; i < imagePath.size(); i++){
