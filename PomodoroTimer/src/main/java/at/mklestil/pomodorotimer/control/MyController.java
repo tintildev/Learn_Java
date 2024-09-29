@@ -11,6 +11,8 @@ public class MyController {
     private int remainingTime = workTime;
     private Timeline timeline;
 
+    private int progress = 0;
+
 
     public MyController(MainWindow view) {
         this.view = view;
@@ -40,8 +42,23 @@ public class MyController {
     private void updateTimer() {
         if (remainingTime > 0) {
             remainingTime--;
-            view.getProgressIndicator().setProgress((double) (workTime - remainingTime) / workTime);;
+            double progressTime = (double) (workTime - remainingTime) / workTime;
+            view.getProgress().setProgress(progressTime);
+            System.out.println(progressTime);
             view.getTimeLabel().setText(formatTime(remainingTime));
+
+            //Change Images
+            if (workTime > 0) {  // Fortschritt erhöhen
+                progress = (int) (progressTime * 100);
+
+                // calculate image stage with the progress
+                int stage = progress / 20;  // 5 images, at all 20%
+
+                // check stage and image length
+                if(stage >= 0 && stage < view.getPlantStages().length) {
+                    view.getPlantImageView().setImage(view.getPlantStages()[stage]);
+                }
+            }
         }
         else {
             // Timer-Ende
@@ -55,6 +72,7 @@ public class MyController {
             timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
             view.getStatus().setText("Do not give up!");
+            view.getPlantImageView().setImage(view.getPlantStages()[1]);
         }else {
             //Pause
             timeline.play();
@@ -73,11 +91,11 @@ public class MyController {
         if (timeline != null) {
             timeline.stop();
             view.getStatus().setText("Ready to start!");
-
         }
         remainingTime = workTime;  // Reset remainingTime to workTime
         view.getTimeLabel().setText(formatTime(remainingTime)); //reset
-        view.getProgressIndicator().setProgress(0); // reset progress
+        view.getProgress().setProgress(0); // reset progress
+        view.getPlantImageView().setImage(view.getPlantStages()[0]); //reset image
     }
 
     private String formatTime(int seconds) {
