@@ -34,6 +34,9 @@ Here are some technologies I have worked with:
 - WordCounter - Java, Swing
 - Tic Tac Toe - Java, Swing
 - Calculator - Java, JavaFX
+- Dock - Java, JavaFX
+- Notepad - Java, JavaFX
+- Pomodoro Timer - Java, JavaFX
 - Spring Hello World - the Spring Quickstart Guide
 - Spring TodoList - my first TodoList in Spring
 - Spark - first spark framework project
@@ -56,6 +59,12 @@ JavaFX Calculator:
 
 JavaFX Dock:
 ![](./images/widgetProgramIcon.png)  
+
+JavaFX Notepad:
+![](./images/notepad.png)  
+
+JavaFX PomodoroTimer:
+![](./images/pomodoroTimer.png)  
 
 Spring Hello World:  
 ![](./images/springHelloWorld.png)  
