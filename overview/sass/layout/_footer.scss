@@ -1,0 +1,99 @@
+.footer {
+    background-color: var(--color-secondary);
+    padding: 4rem;
+    display: grid;
+
+    &__logo{
+        justify-self: center;
+        margin-bottom: 2rem;
+        width: 50vw;
+        height: auto;
+
+        @media only screen and (min-width: $bp-medium){
+            width: 30vw;
+        }
+    }
+    
+
+    &__nav {
+        list-style: none;
+    
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-gap: 2rem;
+        align-items: center;
+
+        &--item {
+            margin: 1rem;
+        }
+    
+        &--link:link,
+        &--link:visited {
+            font-size: var(--default-font-size);
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1.5rem;
+            display: block;
+            transition: all .2s;
+        }
+    
+        &--link:hover,
+        &--link:active{
+            background-color: rgba(#fff, .5);
+            transform: translateY(-3px);     
+        }
+    }
+
+    &__info {
+        font-size: var(--big-font-size);
+        justify-self: center;
+        color: var(--color-white);
+        margin-bottom: 2rem;
+    }
+
+    &__btn {
+        justify-self: center;
+        width: 15vw;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    &__copyright {
+        font-size: var(--default-font-size);
+        color: var(--color-grey-light-1);
+        margin-top: 6rem;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        width: 70%;
+    }
+
+    &__icon {
+        color: white;
+        font-weight: 400;
+        &--facebook:hover{
+                color: #3B5998;
+        }
+        &--instagram:hover{
+                color: #8a3ab9;
+        }
+        &--github:hover{
+                color: #211F1F;
+        }
+        &--linkedin:hover{
+                color: #0077B5;
+        }
+        &--twitter:hover{
+                color: #1DA1F2;
+        }
+        &--xing:hover{
+                color: #cfdc00;
+        }
+    }
+}
+
+
+

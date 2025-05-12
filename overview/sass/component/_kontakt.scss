@@ -1,0 +1,22 @@
+.kontakt{
+    display: grid;
+
+    &__info {
+        font-size: var(--big-font-size);
+        justify-self: center;
+        color: var(--color-black);
+        margin-bottom: 2rem;
+
+        @media (prefers-color-scheme: dark) {
+            color: white;
+        }
+    }
+
+    &__btn {
+        justify-self: center;
+        width: 15vw;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+}
+

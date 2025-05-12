@@ -1,0 +1,74 @@
+// RESPONSIVE BREAKPOINTS
+$bp-medium: 50em; //800px
+
+:root {
+    // COLOR VARIABLES
+    --color-primary: #55C57A;
+    --color-primary-light: #5dc580;
+    --color-primary-dark: #47c671;
+
+    --color-secondary: #101d2c;
+    --color-secondary-dark:  #030608;
+    --color-secondary-light: #101d2c69;
+
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+
+    --color-grey-dark: #777;
+    --color-grey-dark-1: #999;
+    --color-grey-dark-2: #333;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-black-transparent: rgba(0, 0, 0, 0.267);
+
+    // FONT
+    --bigger-font-size: 2.25rem;
+    --big-font-size: 1.6rem;
+    --medium-font-size: 1.5rem;
+    --default-font-size: 1.4rem;
+    --small-font-size: 1.2rem;
+    --tiny-font-size: 0.8rem;
+
+    // BORDER
+    --default-border-radius: 3px;
+    --default-shadow: 0 3rem 6rem var(--color-black-transparent);
+    --default-shadow-light: 0 1.5rem 4rem var(--color-black-transparent);
+
+}
+
+//Dark 
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 10px/16px = 62.5% -> 1rem = 10px */
+}
+
+
+body {
+    font-family: "Lato", sans-serif;
+    color: var(--color-grey-dark-2);
+    font-weight: 300;
+    line-height: 1.6;
+    background-color: white;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #121212;
+        color: white;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}

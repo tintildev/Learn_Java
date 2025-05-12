@@ -1,0 +1,24 @@
+.section{
+  margin: 5rem;
+
+  &__portfolio{
+    margin: 10rem 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+    
+}
+
+  &__kontakt {
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+  }
+
+  &__about {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+}
