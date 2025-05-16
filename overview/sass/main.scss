@@ -1,15 +1,15 @@
-@import "base/animation";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@forward  "base/animation";
+@forward  "base/base";
+@forward  "base/typography";
+@forward  "base/utilities";
 
-@import "component/about";
-@import "component/content";
-@import "component/button";
-@import "component/story";
-@import "component/project";
-@import "component/kontakt";
+@forward  "component/about";
+@forward  "component/content";
+@forward  "component/button";
+@forward  "component/story";
+@forward  "component/project";
+@forward  "component/kontakt";
 
-@import "layout/header";
-@import "layout/footer";
-@import "layout/section";
+@forward  "layout/header";
+@forward  "layout/footer";
+@forward  "layout/section";
