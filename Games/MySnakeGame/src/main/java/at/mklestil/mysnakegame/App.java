@@ -7,15 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import at.mklestil.mysnakegame.control.MainController;
+import at.mklestil.mysnakegame.control.SceneManager;
 
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        MainController.getInstance();
+        SceneManager.getInstance(stage);
         
         stage.setTitle("Hello World!");
-        stage.setScene(MainController.getInstance().getScene());
         stage.show();
     }
 

@@ -6,25 +6,27 @@ import at.mklestil.mysnakegame.view.StartView;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainController {
-    private static MainController instance;
+public class SceneManager {
+    private static SceneManager instance;
     private StartView startView;
     private GameView gameView;
     private SnakeModel model;
-    private Stage stage;
+    private Stage stage = new Stage();
     private Scene scene;
     
-    private MainController(){
+    private SceneManager(){
         startView = new StartView();
         gameView = new GameView();
         scene = new Scene(startView.getRoot(), 320, 200);
+        stage.setScene(scene);
     
     }
 
-    public static MainController getInstance(){
+    public static SceneManager getInstance(Stage mStage){
         if(instance == null){
-        instance = new MainController();
+            instance = new SceneManager();
         }
+        instance.setStage(mStage);
         return instance;
     }
 
@@ -34,6 +36,10 @@ public class MainController {
 
     public Scene getScene(){
         return scene;
+    }
+
+    private void setStage(Stage stage){
+        this.stage = stage;
     }
     
 }
