@@ -11,35 +11,41 @@ public class SceneManager {
     private StartView startView;
     private GameView gameView;
     private SnakeModel model;
-    private Stage stage = new Stage();
+    private Stage stage;
     private Scene scene;
-    
-    private SceneManager(){
+
+    private SceneManager() {
         startView = new StartView();
         gameView = new GameView();
         scene = new Scene(startView.getRoot(), 320, 200);
-        stage.setScene(scene);
-    
+
     }
 
-    public static SceneManager getInstance(Stage mStage){
-        if(instance == null){
+    public static SceneManager getInstance(Stage mStage) {
+        if (instance == null) {
             instance = new SceneManager();
         }
         instance.setStage(mStage);
         return instance;
     }
 
-    public void initializeScenes(){
-        
-    } 
+    public void initializeScenes() {
 
-    public Scene getScene(){
+    }
+
+    public Scene getScene() {
         return scene;
     }
 
-    private void setStage(Stage stage){
+    private void setStage(Stage stage) {
         this.stage = stage;
     }
-    
+
+    public void showStartView() {
+        scene.setRoot(startView.getRoot()); // If scene already exists
+        stage.setScene(scene);
+        stage.setTitle("My Snake Game");
+        stage.show(); // show
+    }
+
 }
