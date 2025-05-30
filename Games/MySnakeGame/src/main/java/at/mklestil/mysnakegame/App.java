@@ -10,7 +10,9 @@ import at.mklestil.mysnakegame.control.SceneManager;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        SceneManager.getInstance(stage).showStartView();;
+        SceneManager sceneManager = SceneManager.getInstance();
+        sceneManager.setStage(stage);
+        sceneManager.showStartView();
        
     }
 

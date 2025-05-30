@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 
 public class StartView {
     private BorderPane root;
+    private Button startBtn;
 
     public StartView() {
         startGUI();
@@ -38,7 +39,7 @@ public class StartView {
     private HBox getButtonsContainer() {
         HBox buttons = new HBox(20);
         Label speedLabel = new Label("Speed");
-        Button startBtn = new Button("Start");
+        startBtn = new Button("Start");
         Label musicLabel = new Label("Music");
         buttons.getChildren().addAll(speedLabel, startBtn, musicLabel);
         buttons.setAlignment(Pos.CENTER);
@@ -49,4 +50,7 @@ public class StartView {
         return root;
     }
 
+    public Button getStartBtn() {
+        return startBtn;
+    }
 }

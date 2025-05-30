@@ -16,16 +16,19 @@ public class SceneManager {
 
     private SceneManager() {
         startView = new StartView();
+        StartController startController = new StartController(startView);
         gameView = new GameView();
+        GameController gameController = new GameController();
+
+        model = new SnakeModel();
         scene = new Scene(startView.getRoot(), 320, 200);
 
     }
 
-    public static SceneManager getInstance(Stage mStage) {
+    public static SceneManager getInstance() {
         if (instance == null) {
             instance = new SceneManager();
         }
-        instance.setStage(mStage);
         return instance;
     }
 
@@ -37,7 +40,7 @@ public class SceneManager {
         return scene;
     }
 
-    private void setStage(Stage stage) {
+    public void setStage(Stage stage) {
         this.stage = stage;
     }
 
@@ -45,6 +48,13 @@ public class SceneManager {
         scene.setRoot(startView.getRoot()); // If scene already exists
         stage.setScene(scene);
         stage.setTitle("My Snake Game");
+        stage.show(); // show
+    }
+
+    public void showGameView(){
+        scene.setRoot(gameView.getRoot()); // If scene already exists
+        stage.setScene(scene);
+        stage.setTitle("My Snake Game - Playing");
         stage.show(); // show
     }
 
