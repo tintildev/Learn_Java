@@ -3,11 +3,10 @@ package at.mklestil.mysnakegame.model;
 import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.skin.TextInputControlSkin.Direction;
 
 public class SnakeModel {
 
-    public enum Direction{
+    public enum Direction {
         UP, DOWN, LEFT, RIGHT;
     }
 
@@ -27,6 +26,6 @@ public class SnakeModel {
     private ObservableList<Node> snake;
 
     private int score = 0;
-    
-    
+
+
 }

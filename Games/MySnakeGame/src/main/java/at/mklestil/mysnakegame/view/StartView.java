@@ -1,5 +1,6 @@
 package at.mklestil.mysnakegame.view;
 
+import at.mklestil.mysnakegame.model.SnakeModel;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,6 +17,8 @@ public class StartView {
 
     private void startGUI() {
         root = new BorderPane();
+        root.setPrefHeight(SnakeModel.GAME_HEIGHT);
+        root.setPrefWidth(SnakeModel.GAME_WIDTH);
         root.setTop(getTitelContainer());
         root.setCenter(getGameContainer());
         root.setBottom(getButtonsContainer());

@@ -12,7 +12,7 @@ public class SceneManager {
     private GameView gameView;
     private SnakeModel model;
     private Stage stage;
-    private Scene scene;
+    private final Scene scene;
 
     private SceneManager() {
         startView = new StartView();
@@ -21,7 +21,7 @@ public class SceneManager {
         GameController gameController = new GameController();
 
         model = new SnakeModel();
-        scene = new Scene(startView.getRoot(), 320, 200);
+        scene = new Scene(startView.getRoot(), SnakeModel.GAME_WIDTH, SnakeModel.GAME_HEIGHT);
 
     }
 
@@ -51,7 +51,7 @@ public class SceneManager {
         stage.show(); // show
     }
 
-    public void showGameView(){
+    public void showGameView() {
         scene.setRoot(gameView.getRoot()); // If scene already exists
         stage.setScene(scene);
         stage.setTitle("My Snake Game - Playing");
