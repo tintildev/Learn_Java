@@ -23,8 +23,6 @@ public class SnakeModel {
 
     private Timeline timeline = new Timeline();
 
-    private ObservableList<Node> snake;
-
     private int score = 0;
 
 

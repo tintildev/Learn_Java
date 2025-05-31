@@ -18,7 +18,7 @@ public class SceneManager {
         startView = new StartView();
         StartController startController = new StartController(startView);
         gameView = new GameView();
-        GameController gameController = new GameController();
+        GameController gameController = new GameController(gameView);
 
         model = new SnakeModel();
         scene = new Scene(startView.getRoot(), SnakeModel.GAME_WIDTH, SnakeModel.GAME_HEIGHT);
