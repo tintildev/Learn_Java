@@ -25,5 +25,8 @@ public class SnakeModel {
 
     private int score = 0;
 
+    public Direction getDirection() {
+        return direction;
+    }
 
 }
