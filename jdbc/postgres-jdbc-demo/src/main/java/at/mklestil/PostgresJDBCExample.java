@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class PostgresJDBCExample {
-    public static void main(String[] args) {
+    public PostgresJDBCExample() {
         String url = "jdbc:postgresql://localhost:5432/mydatabase";
         String user = "myuser";
         String password = "mypassword";
