@@ -7,9 +7,13 @@ public class Person {
     private Integer age;
 
     public Person(){}
-    public Person(String firstName) {
-        this.firstName = firstName;
+
+    public Person(String firstNamejohn, String lastName, int i) {
+        this.firstName = firstNamejohn;
+        this.lastName = lastName;
+        age = i;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -17,5 +21,13 @@ public class Person {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Integer getAge() {
+        return age;
     }
 }
