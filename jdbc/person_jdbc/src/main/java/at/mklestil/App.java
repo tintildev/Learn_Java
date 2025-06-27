@@ -9,5 +9,7 @@ public class App {
 
         PersonController personController = new PersonController();
         personController.addPerson(new Person("John", "Doe", 30));
+        personController.addPerson(new Person("Johni", "Doe", 33));
+        personController.addPerson(new Person("Johna", "Doe", 20));
     }
 }

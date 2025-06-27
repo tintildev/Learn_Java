@@ -12,6 +12,7 @@ import static at.mklestil.db.DBConnector.connect;
 
 public class PersonRepository {
     DBConnector dbConnector;
+    Connection connection;
 
     public PersonRepository(DBConnector dbConnector){
         // Initialize the repository with a database connector
@@ -19,17 +20,16 @@ public class PersonRepository {
         System.out.println("PersonRepository initialized with DBConnector");
 
         try {
-            connect();
+            this.connection = connect();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void addPerson(String firstName, String lastName, int age) {
-        String insertQuery = "INSERT INTO person (first_name, last_name, age) VALUES (?, ?, ?)";
+        String insertQuery = "INSERT INTO person (firstname, lastname, age) VALUES (?, ?, ?)";
 
-        try (Connection conn = DBConnector.connect();
-             PreparedStatement pstmt = conn.prepareStatement(insertQuery)) {
+        try (PreparedStatement pstmt = connection.prepareStatement(insertQuery)) {
 
             pstmt.setString(1, firstName);
             pstmt.setString(2, lastName);

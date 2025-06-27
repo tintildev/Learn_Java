@@ -19,8 +19,8 @@ public class DBConnector {
     public void createDB() {
         String sql = "CREATE TABLE IF NOT EXISTS person (" +
                 "id SERIAL PRIMARY KEY, " +
-                "first_name VARCHAR(50), " +
-                "last_name VARCHAR(50), " +
+                "firstname VARCHAR(50), " +
+                "lastname VARCHAR(50), " +
                 "age INTEGER" +
                 ")";
 
