@@ -26,24 +26,29 @@ public class PersonController {
         }
     }
 
-        public void addPerson(Person person) {
-            personRepository.addPerson(person.getFirstName(), person.getLastName(), person.getAge());
-
-        }
-
-        public ArrayList<Person> getAllPersons() {
-            // Logic to retrieve all persons from the database
-            System.out.println("Retrieving all persons");
-            // Here you would typically call a method from the repository to get all persons
-            return new ArrayList<Person>();
-        }
-
-        public void deletePerson(Person person) {
-            // Logic to delete a person from the database
-            System.out.println("Deleting person: " + person.getFirstName());
-            // Here you would typically call a method from the repository to delete the person
-        }
-
+    /**
+     * Adds a person to the database.
+     *
+     * @param person
+     */
+    public void addPerson(Person person) {
+        personRepository.addPerson(person.getFirstName(), person.getLastName(), person.getAge());
 
     }
+
+    public ArrayList<Person> getAllPersons() {
+        // Logic to retrieve all persons from the database
+        System.out.println("Retrieving all persons");
+        // Here you would typically call a method from the repository to get all persons
+        return new ArrayList<Person>();
+    }
+
+    public void deletePerson(Person person) {
+        // Logic to delete a person from the database
+        System.out.println("Deleting person: " + person.getFirstName());
+        // Here you would typically call a method from the repository to delete the person
+    }
+
+
+}
 
