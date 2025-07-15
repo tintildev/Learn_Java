@@ -11,5 +11,8 @@ public class App {
         personController.addPerson(new Person("John", "Doe", 30));
         personController.addPerson(new Person("Johni", "Doe", 33));
         personController.addPerson(new Person("Johna", "Doe", 20));
+
+        personController.getAllPersons()
+                .forEach(person -> System.out.println("Person: " + person.getFirstName() + " " + person.getLastName() + ", Age: " + person.getAge()));
     }
 }

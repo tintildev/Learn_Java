@@ -37,10 +37,8 @@ public class PersonController {
     }
 
     public ArrayList<Person> getAllPersons() {
-        // Logic to retrieve all persons from the database
-        System.out.println("Retrieving all persons");
-        // Here you would typically call a method from the repository to get all persons
-        return new ArrayList<Person>();
+        ArrayList<Person> persons = personRepository.getAllPersons();
+        return persons;
     }
 
     public void deletePerson(Person person) {

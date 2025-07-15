@@ -55,10 +55,35 @@ public class PersonRepository {
      * @return
      */
     public ArrayList<Person> getAllPersons() {
-        //TODO Implement the logic to retrieve all persons from the database
+        System.out.println("Start retrieving all persons");
 
-        System.out.println("Retrieving all persons");
-        // Here you would typically execute an SQL SELECT statement and return the results
+        String insertQuery = "SELECT * FROM person";
+
+        try (PreparedStatement pstmt = connection.prepareStatement(insertQuery)) {
+            var resultSet = pstmt.executeQuery();
+
+            ArrayList<Person> persons = new ArrayList<>();
+
+            while (resultSet.next()) {
+                String firstName = resultSet.getString("firstname");
+                String lastName = resultSet.getString("lastname");
+                int age = resultSet.getInt("age");
+
+                Person person = new Person(firstName, lastName, age);
+                persons.add(person);
+            }
+
+            System.out.println("Persons retrieved successfully: " + persons.size());
+            return persons;
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         return new ArrayList<Person>();
     }
 
