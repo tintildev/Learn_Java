@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static at.mklestil.db.DBConnector.connect;
 
@@ -49,6 +50,32 @@ public class PersonRepository {
             e.printStackTrace();
         }
     }
+    /**
+     * Retrieves a person from the database by ID.
+     * @param id
+     * @return
+     */
+    public Person getPersonById(int id) {
+        String insertQuery = "SELECT * FROM person WHERE id = ?";
+        try (PreparedStatement pstmt = connection.prepareStatement(insertQuery)) {
+            pstmt.setInt(1, id); // <-- das musst du ergänzen
+
+            var resultSet = pstmt.executeQuery();
+
+            if (resultSet.next()) { // WICHTIG: .next() muss aufgerufen werden
+                String firstName = resultSet.getString("firstname");
+                String lastName = resultSet.getString("lastname");
+                int age = resultSet.getInt("age");
+
+                return new Person(firstName, lastName, age);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     /**
      * Retrieves all persons from the database.
@@ -87,9 +114,33 @@ public class PersonRepository {
         return new ArrayList<Person>();
     }
 
+    /**
+     * Deletes a person from the database by ID.
+     * Check if the person exists before deleting.
+     * @param id
+     */
     public void deletePerson(int id) {
-        //TODO Implement the logic to delete a person from the database by ID
-        System.out.println("Deleting person: " + id);
-        // Here you would typically execute an SQL DELETE statement
+        String deleteQuery = "DELETE FROM person WHERE id = ?";
+
+        // Check if the person exists before attempting to delete
+        Person person = getPersonById(id);
+        if (person == null) {
+            System.out.println("Person with ID " + id + " not found.");
+            return;
+        }
+        System.out.println("Deleting person: " + person.getFirstName() + " " + person.getLastName());
+
+        try (PreparedStatement pstmt = connection.prepareStatement(deleteQuery)) {
+            pstmt.setInt(1, id);
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Person successfully deleted.");
+            } else {
+                System.out.println("No person deleted. ID may not exist.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+
 }

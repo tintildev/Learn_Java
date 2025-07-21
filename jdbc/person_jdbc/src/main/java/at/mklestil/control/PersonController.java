@@ -41,10 +41,8 @@ public class PersonController {
         return persons;
     }
 
-    public void deletePerson(Person person) {
-        // Logic to delete a person from the database
-        System.out.println("Deleting person: " + person.getFirstName());
-        // Here you would typically call a method from the repository to delete the person
+    public void deletePerson(int id) {
+        personRepository.deletePerson(id);
     }
 
 
